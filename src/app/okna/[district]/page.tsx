@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!d) return { title: "Страница не найдена" };
 
   const title = `Пластиковые окна ${d.nameIn} — цены от производителя | Окна-Кредит`;
-  const description = `Металлопластиковые окна ${d.nameIn} (${d.district}). Профили RIHAU и IVAPER, установка под ключ. Бесплатный замер — выезжаем ${d.nameIn}. Цены от 4 900 ₽/м². Гарантия 3 года.`;
+  const description = `Металлопластиковые окна ${d.nameIn} (${d.district}). Профили REHAU и IVAPER, установка под ключ. Бесплатный замер — выезжаем ${d.nameIn}. Цены от 4 900 ₽/м². Гарантия 3 года.`;
 
   return {
     title,
@@ -60,7 +60,7 @@ export default function DistrictPage({ params }: Props) {
   // Localised schema copy
   const localSchema = {
     ...localBusinessSchema,
-    description: `Производство и установка металлопластиковых окон ${d.nameIn}. Профили RIHAU и IVAPER, фурнитура ROTO FRANK. Бесплатный замер. Монтаж под ключ.`,
+    description: `Производство и установка металлопластиковых окон ${d.nameIn}. Профили REHAU и IVAPER, фурнитура ROTO FRANK. Бесплатный замер. Монтаж под ключ.`,
     areaServed: [
       { "@type": "City", name: "Санкт-Петербург" },
       { "@type": "Place", name: d.name },
@@ -115,7 +115,7 @@ export default function DistrictPage({ params }: Props) {
           {[
             { title: "Бесплатный замер", desc: `Замерщик приезжает ${d.nameIn} в любой день, включая выходные. Расчёт на месте.` },
             { title: "Монтаж за 1 день", desc: "Демонтаж старых окон, монтаж, откосы, подоконники — всё за один визит." },
-            { title: "Профили RIHAU и IVAPER", desc: "Немецкий ПВХ-профиль с гарантированным сроком службы 50 условных лет. Сертификат Госстрой." },
+            { title: "Профили REHAU и IVAPER", desc: "Немецкий ПВХ-профиль с гарантированным сроком службы 50 условных лет. Сертификат Госстрой." },
             { title: "Фурнитура ROTO FRANK", desc: "Периметральное запирание, двухплоскостное прижатие. Антивзломный класс RC2." },
             { title: "Цены без посредников", desc: "Поставляем напрямую с завода — экономия до 30% по сравнению с дилерами." },
             { title: "Гарантия 3 года", desc: "На изделия и монтажные работы. Гарантийный сервис — бесплатно." },
@@ -145,9 +145,9 @@ export default function DistrictPage({ params }: Props) {
               </thead>
               <tbody>
                 {[
-                  ["«Стандарт» ПВХ RIHAU и IVAPER",       "Однокамерный 4-16-4",        "4 900 ₽/м²"],
-                  ["«Комфорт» ПВХ RIHAU и IVAPER",        "Двухкамерный 4-10-4-10-4",   "7 200 ₽/м²"],
-                  ["Энергосберегающее RIHAU и IVAPER",    "Двухкамерный с i-coating",   "9 800 ₽/м²"],
+                  ["«Стандарт» ПВХ REHAU и IVAPER",       "Однокамерный 4-16-4",        "4 900 ₽/м²"],
+                  ["«Комфорт» ПВХ REHAU и IVAPER",        "Двухкамерный 4-10-4-10-4",   "7 200 ₽/м²"],
+                  ["Энергосберегающее REHAU и IVAPER",    "Двухкамерный с i-coating",   "9 800 ₽/м²"],
                   ["Алюминиевое Slim Line (терморазрыв)", "Двухкамерный",               "12 500 ₽/м²"],
                 ].map(([name, glass, price], i) => (
                   <tr key={i} className={i % 2 === 0 ? "bg-brand-cream" : "bg-white"}>

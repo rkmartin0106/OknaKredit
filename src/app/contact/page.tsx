@@ -43,7 +43,7 @@ const contactDetails = [
       </svg>
     ),
     label: "Email",
-    content: <a href="mailto:info@oknakredit.ru" className="text-brand-blue font-medium hover:text-brand-blueLight transition-colors">info@oknakredit.ru</a>,
+    content: <a href="mailto:info@oknakredit.spb.ru" className="text-brand-blue font-medium hover:text-brand-blueLight transition-colors">info@oknakredit.spb.ru</a>,
     link: null,
   },
   {

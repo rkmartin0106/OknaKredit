@@ -23,8 +23,8 @@ export default function Header() {
       {/* Top bar */}
       <div className="bg-brand-blueDark text-white/60 text-xs py-1.5 hidden md:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-end items-center">
-          <a href="mailto:info@oknakredit.ru" className="hover:text-white transition-colors">
-            info@oknakredit.ru
+          <a href="mailto:info@oknakredit.spb.ru" className="hover:text-white transition-colors">
+            info@oknakredit.spb.ru
           </a>
         </div>
       </div>

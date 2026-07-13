@@ -5,7 +5,7 @@ import { products, categoryLabels, type ProductCategory } from "@/lib/products";
 export const metadata: Metadata = {
   title: "Каталог продукции",
   description:
-    "Металлопластиковые окна, алюминиевые конструкции, остекление балконов и двери. Профили RIHAU и IVAPER. Цены от производителя.",
+    "Металлопластиковые окна, алюминиевые конструкции, остекление балконов и двери. Профили REHAU и IVAPER. Цены от производителя.",
 };
 
 const categories: { key: ProductCategory | "all"; label: string }[] = [
@@ -32,7 +32,7 @@ export default function ProductsPage({
       <div className="mb-10">
         <h1 className="section-heading">Каталог продукции</h1>
         <p className="section-subheading mt-3">
-          Все изделия изготавливаются под заказ в любых размерах. Профили RIHAU и IVAPER, фурнитура ROTO FRANK, стеклопакеты на все случаи жизни.
+          Все изделия изготавливаются под заказ в любых размерах. Профили REHAU и IVAPER, фурнитура ROTO FRANK, стеклопакеты на все случаи жизни.
         </p>
       </div>
 
