@@ -99,29 +99,35 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative bg-brand-blue overflow-hidden">
+      {/* Hero — trial palette: Olivewood #210706 / Tuscan Red #891D1A / Slate Blue #5E657B / Creamy Biscotti #F1E6D2 */}
+      <section className="relative bg-[#5E657B] overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36">
           <div className="max-w-3xl">
-            <span className="inline-block bg-brand-red text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-5">
+            <span className="inline-block bg-[#891D1A] text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-5">
               Производитель · Бесплатный замер · Гарантия 3 года
             </span>
             <h1 className="text-4xl md:text-6xl font-heading font-bold text-white leading-tight">
               Металлопластиковые окна от производителя
             </h1>
-            <p className="mt-6 text-white/70 text-lg md:text-xl leading-relaxed max-w-2xl">
+            <p className="mt-6 text-[#F1E6D2]/80 text-lg md:text-xl leading-relaxed max-w-2xl">
               Профили REHAU и IVAPER, фурнитура ROTO FRANK, стеклопакеты на все случаи жизни. Монтаж под ключ без посредников — вы экономите до 30%.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/contact" className="btn-primary text-base py-3.5 px-8">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 bg-[#891D1A] text-white font-semibold px-8 py-3.5 rounded-md hover:bg-[#210706] transition-colors duration-200 shadow-md text-base"
+              >
                 Вызвать замерщика бесплатно
               </Link>
-              <Link href="/products" className="btn-white text-base py-3.5 px-8">
+              <Link
+                href="/products"
+                className="inline-flex items-center justify-center gap-2 bg-[#F1E6D2] text-[#210706] font-semibold px-8 py-3.5 rounded-md hover:bg-white transition-colors duration-200 shadow-md text-base"
+              >
                 Смотреть продукцию
               </Link>
             </div>
-            <div className="mt-10 flex flex-wrap gap-8 text-white/60 text-sm">
+            <div className="mt-10 flex flex-wrap gap-8 text-[#F1E6D2]/70 text-sm">
               {[
                 ["2500+", "выполненных объектов"],
                 ["20+", "лет на рынке"],
