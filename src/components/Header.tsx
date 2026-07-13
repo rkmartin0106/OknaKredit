@@ -19,9 +19,9 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-brand-blue shadow-md">
+    <header className="sticky top-0 z-50 bg-[#2A1414] shadow-md">
       {/* Top bar */}
-      <div className="bg-brand-blueDark text-white/60 text-xs py-1.5 hidden md:block">
+      <div className="bg-[#1C0F0F] text-white/60 text-xs py-1.5 hidden md:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <a href="mailto:info@oknakredit.spb.ru" className="hover:text-white transition-colors">
             info@oknakredit.spb.ru
@@ -96,7 +96,7 @@ export default function Header() {
       {/* Mobile menu */}
       <div
         className={clsx(
-          "md:hidden bg-brand-blueDark transition-all duration-300 overflow-hidden",
+          "md:hidden bg-[#1C0F0F] transition-all duration-300 overflow-hidden",
           open ? "max-h-screen py-3" : "max-h-0"
         )}
       >
