@@ -213,6 +213,9 @@ export default function HomePage() {
             <Link href="/contact" className="btn-outline border-brand-blueDark text-brand-blueDark hover:bg-brand-blueDark hover:text-white text-base py-3.5 px-10">
               Заказать замер
             </Link>
+            <a href="tel:+78129650040" className="inline-flex items-center gap-2 bg-brand-blueDark text-white font-semibold px-8 py-3.5 rounded-md hover:bg-brand-blue transition-colors text-base">
+              +7 (812) 965-00-40
+            </a>
             <a href="tel:+78125291104" className="inline-flex items-center gap-2 bg-brand-blueDark text-white font-semibold px-8 py-3.5 rounded-md hover:bg-brand-blue transition-colors text-base">
               +7 (812) 529-11-04
             </a>
@@ -234,20 +237,16 @@ export default function HomePage() {
             },
             {
               name: "Фурнитура ROTO FRANK",
-              desc: "Периметральное запирание по всему периметру створки. Двухплоскостное прижатие одной ручкой. Антивзломная защита. Плавная регулировка прижима и положения створки.",
+              desc: "С запором по периметру. Микропроветривание включено. Двухплоскостное прижатие одной ручкой. Антивзломная защита. Плавная регулировка прижима и положения створки.",
             },
             {
               name: "Стеклопакеты",
-              origin: "Собственное производство",
-              desc: "Однокамерные, двухкамерные, энергосберегающие (селективное i-покрытие), триплекс, закалённое стекло. Заполнение камер аргоном по заказу. Производство — «Невские витражи».",
+              desc: "Однокамерные, двухкамерные, энергосберегающие (селективное i-покрытие), мультифункциональные, шумоподавляющие, триплекс, закалённое стекло. Заполнение камер аргоном.",
             },
           ].map((b) => (
             <div key={b.name} className="bg-white rounded-xl shadow-card p-6">
-              <div className="flex items-start justify-between mb-3">
+              <div className="mb-3">
                 <h3 className="font-heading font-semibold text-brand-blue text-lg">{b.name}</h3>
-                {b.origin && (
-                  <span className="text-xs bg-brand-blue/10 text-brand-blue px-2 py-1 rounded-full shrink-0 ml-2">{b.origin}</span>
-                )}
               </div>
               <p className="text-brand-gray text-sm leading-relaxed">{b.desc}</p>
             </div>
