@@ -6,7 +6,7 @@ import { products } from "@/lib/products";
 export const metadata: Metadata = {
   title: "OknaKredit — Металлопластиковые окна от производителя в СПб",
   description:
-    "Производство и установка металлопластиковых окон, алюминиевых конструкций и остекления балконов. Профиль GEALAN. Бесплатный замер. Монтаж под ключ. Гарантия 5 лет.",
+    "Производство и установка металлопластиковых окон, алюминиевых конструкций и остекления балконов. Профиль GEALAN. Бесплатный замер. Монтаж под ключ. Гарантия 3 года.",
 };
 
 const benefits = [
@@ -52,7 +52,7 @@ const benefits = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
       </svg>
     ),
-    title: "Гарантия 5 лет",
+    title: "Гарантия 3 года",
     desc: "Официальная гарантия на изделия и монтаж. Бесплатное гарантийное и постгарантийное обслуживание.",
   },
   {
@@ -104,8 +104,8 @@ export default function HomePage() {
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36">
           <div className="max-w-3xl">
-            <span className="inline-block bg-brand-red/20 text-brand-red text-sm font-semibold px-4 py-1.5 rounded-full mb-5">
-              Производитель · Бесплатный замер · Гарантия 5 лет
+            <span className="inline-block bg-brand-red text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-5">
+              Производитель · Бесплатный замер · Гарантия 3 года
             </span>
             <h1 className="text-4xl md:text-6xl font-heading font-bold text-white leading-tight">
               Металлопластиковые окна от производителя
@@ -125,7 +125,7 @@ export default function HomePage() {
               {[
                 ["2 000+", "выполненных объектов"],
                 ["15+", "лет на рынке"],
-                ["5 лет", "гарантия"],
+                ["3 года", "гарантия"],
                 ["3%", "скидка с сайта"],
               ].map(([val, label]) => (
                 <div key={label}>

@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!d) return { title: "Страница не найдена" };
 
   const title = `Пластиковые окна ${d.nameIn} — цены от производителя | Окна-Кредит`;
-  const description = `Металлопластиковые окна ${d.nameIn} (${d.district}). Профиль GEALAN, установка под ключ. Бесплатный замер — выезжаем ${d.nameIn}. Цены от 4 900 ₽/м². Гарантия 5 лет.`;
+  const description = `Металлопластиковые окна ${d.nameIn} (${d.district}). Профиль GEALAN, установка под ключ. Бесплатный замер — выезжаем ${d.nameIn}. Цены от 4 900 ₽/м². Гарантия 3 года.`;
 
   return {
     title,
@@ -118,7 +118,7 @@ export default function DistrictPage({ params }: Props) {
             { title: "Профиль GEALAN", desc: "Немецкий ПВХ-профиль с гарантированным сроком службы 50 условных лет. Сертификат Госстрой." },
             { title: "Фурнитура ROTO FRANK", desc: "Периметральное запирание, двухплоскостное прижатие. Антивзломный класс RC2." },
             { title: "Цены без посредников", desc: "Производим сами — экономия до 30% по сравнению с дилерами." },
-            { title: "Гарантия 5 лет", desc: "На изделия и монтажные работы. Гарантийный сервис — бесплатно." },
+            { title: "Гарантия 3 года", desc: "На изделия и монтажные работы. Гарантийный сервис — бесплатно." },
           ].map((f) => (
             <div key={f.title} className="card p-6">
               <h3 className="font-semibold text-brand-blue mb-2">{f.title}</h3>

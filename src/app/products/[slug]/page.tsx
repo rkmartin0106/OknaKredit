@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!product) return { title: "Товар не найден" };
   return {
     title: `${product.name} — цена в СПб, купить от производителя`,
-    description: `${product.shortDesc} Профиль GEALAN, фурнитура ROTO FRANK. Цена ${product.price}. Бесплатный замер в СПб. Монтаж под ключ. Гарантия 5 лет.`,
+    description: `${product.shortDesc} Профиль GEALAN, фурнитура ROTO FRANK. Цена ${product.price}. Бесплатный замер в СПб. Монтаж под ключ. Гарантия 3 года.`,
     keywords: [
       product.name.toLowerCase(),
       `купить ${product.name.toLowerCase()} спб`,
@@ -106,7 +106,7 @@ export default function ProductDetailPage({ params }: Props) {
 
             {/* Trust badges */}
             <div className="mt-8 flex flex-wrap gap-3">
-              {["Гарантия 5 лет", "Монтаж под ключ", "Бесплатный замер", "ГОСТ 30971"].map((b) => (
+              {["Гарантия 3 года", "Монтаж под ключ", "Бесплатный замер", "ГОСТ 30971"].map((b) => (
                 <span key={b} className="text-xs bg-brand-blue/8 text-brand-blue font-medium px-3 py-1.5 rounded-full">
                   {b}
                 </span>

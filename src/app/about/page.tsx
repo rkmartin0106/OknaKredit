@@ -46,7 +46,7 @@ export default function AboutPage() {
               ["2 000+", "объектов"],
               ["15+", "лет опыта"],
               ["60+", "сотрудников"],
-              ["5 лет", "гарантия"],
+              ["3 года", "гарантия"],
             ].map(([val, label]) => (
               <div key={label}>
                 <p className="text-3xl font-bold text-brand-red">{val}</p>
