@@ -19,9 +19,9 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-brand-navy shadow-md">
+    <header className="sticky top-0 z-50 bg-brand-blue shadow-md">
       {/* Top bar */}
-      <div className="bg-brand-navyDark text-white/60 text-xs py-1.5 hidden md:block">
+      <div className="bg-brand-blueDark text-white/60 text-xs py-1.5 hidden md:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <span>Пн–Пт: 9:00–19:00 · Сб: 10:00–17:00 · Замер — в любой день бесплатно</span>
           <a href="mailto:info@oknakredit.ru" className="hover:text-white transition-colors">
@@ -35,7 +35,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <span className="text-2xl font-heading font-bold text-white">
-              Окна<span className="text-brand-gold">Кредит</span>
+              Окна<span className="text-brand-red">Кредит</span>
             </span>
           </Link>
 
@@ -45,7 +45,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-white/80 hover:text-brand-gold font-medium text-sm transition-colors"
+                className="text-white/80 hover:text-brand-red font-medium text-sm transition-colors"
               >
                 {link.label}
               </Link>
@@ -56,7 +56,7 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-3">
             <a
               href="tel:+78125291104"
-              className="text-white font-semibold text-sm hover:text-brand-gold transition-colors"
+              className="text-white font-semibold text-sm hover:text-brand-red transition-colors"
             >
               +7 (812) 529-11-04
             </a>
@@ -85,7 +85,7 @@ export default function Header() {
       {/* Mobile menu */}
       <div
         className={clsx(
-          "md:hidden bg-brand-navyDark transition-all duration-300 overflow-hidden",
+          "md:hidden bg-brand-blueDark transition-all duration-300 overflow-hidden",
           open ? "max-h-screen py-3" : "max-h-0"
         )}
       >
@@ -95,12 +95,12 @@ export default function Header() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="text-white/80 hover:text-brand-gold py-2 font-medium transition-colors"
+              className="text-white/80 hover:text-brand-red py-2 font-medium transition-colors"
             >
               {link.label}
             </Link>
           ))}
-          <a href="tel:+78125291104" className="text-brand-gold font-semibold py-2 text-sm">
+          <a href="tel:+78125291104" className="text-brand-red font-semibold py-2 text-sm">
             +7 (812) 529-11-04
           </a>
           <Link

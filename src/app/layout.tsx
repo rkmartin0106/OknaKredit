@@ -9,8 +9,8 @@ const BASE_URL = "https://oknakredit.ru";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Пластиковые окна в СПб от производителя | ОкнаКредит",
-    template: "%s | ОкнаКредит — окна в СПб",
+    default: "Пластиковые окна в СПб от производителя | Окна-Кредит",
+    template: "%s | Окна-Кредит — окна в СПб",
   },
   description:
     "Металлопластиковые окна в Санкт-Петербурге от производителя. Профиль GEALAN, фурнитура ROTO FRANK. Бесплатный замер в любой день. Монтаж под ключ. Гарантия 5 лет. Цены от 4 900 ₽/м².",
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     "остекление балкона спб",
     "окна под ключ спб",
   ],
-  authors: [{ name: "ООО «ОкнаКредит»", url: BASE_URL }],
-  creator: "ООО «ОкнаКредит»",
-  publisher: "ООО «ОкнаКредит»",
+  authors: [{ name: "ООО «Окна-Кредит»", url: BASE_URL }],
+  creator: "ООО «Окна-Кредит»",
+  publisher: "ООО «Окна-Кредит»",
   robots: {
     index: true,
     follow: true,
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ru_RU",
     url: BASE_URL,
-    siteName: "ОкнаКредит",
-    title: "Пластиковые окна в СПб от производителя | ОкнаКредит",
+    siteName: "Окна-Кредит",
+    title: "Пластиковые окна в СПб от производителя | Окна-Кредит",
     description:
       "Металлопластиковые окна в Санкт-Петербурге. Профиль GEALAN, фурнитура ROTO FRANK. Бесплатный замер. Монтаж под ключ. Гарантия 5 лет.",
   },

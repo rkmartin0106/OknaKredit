@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: article.excerpt,
       type: "article",
       publishedTime: article.date,
-      authors: ["ОкнаКредит"],
+      authors: ["Окна-Кредит"],
       locale: "ru_RU",
     },
   };
@@ -83,10 +83,10 @@ export default function BlogArticlePage({ params }: Props) {
     description: article.excerpt,
     datePublished: article.date,
     dateModified: article.date,
-    author: { "@type": "Organization", name: "ОкнаКредит", url: "https://oknakredit.ru" },
+    author: { "@type": "Organization", name: "Окна-Кредит", url: "https://oknakredit.ru" },
     publisher: {
       "@type": "Organization",
-      name: "ОкнаКредит",
+      name: "Окна-Кредит",
       logo: { "@type": "ImageObject", url: "https://oknakredit.ru/images/logo.png" },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": `https://oknakredit.ru/blog/${article.slug}` },
@@ -105,21 +105,21 @@ export default function BlogArticlePage({ params }: Props) {
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <nav className="text-xs text-brand-gray mb-6 flex items-center gap-2 flex-wrap">
-          <Link href="/" className="hover:text-brand-navy transition-colors">Главная</Link>
+          <Link href="/" className="hover:text-brand-blue transition-colors">Главная</Link>
           <span>/</span>
-          <Link href="/blog" className="hover:text-brand-navy transition-colors">Блог</Link>
+          <Link href="/blog" className="hover:text-brand-blue transition-colors">Блог</Link>
           <span>/</span>
-          <span className="text-brand-navy">{article.category}</span>
+          <span className="text-brand-blue">{article.category}</span>
         </nav>
 
-        <span className="inline-block bg-brand-gold/15 text-brand-navyDark text-xs font-bold px-3 py-1 rounded-full mb-4">
+        <span className="inline-block bg-brand-red/15 text-brand-blueDark text-xs font-bold px-3 py-1 rounded-full mb-4">
           {article.category}
         </span>
-        <h1 className="text-3xl md:text-4xl font-heading font-bold text-brand-navy leading-snug">
+        <h1 className="text-3xl md:text-4xl font-heading font-bold text-brand-blue leading-snug">
           {article.title}
         </h1>
         <div className="flex items-center gap-4 mt-4 text-xs text-brand-gray flex-wrap">
-          <span>ОкнаКредит</span>
+          <span>Окна-Кредит</span>
           <span>·</span>
           <span>{new Date(article.date).toLocaleDateString("ru-RU", { day: "numeric", month: "long", year: "numeric" })}</span>
           <span>·</span>
@@ -127,12 +127,12 @@ export default function BlogArticlePage({ params }: Props) {
         </div>
 
         <div className="mt-10 space-y-4 text-brand-gray leading-relaxed
-          [&_h2]:text-brand-navy [&_h2]:font-heading [&_h2]:font-bold [&_h2]:text-2xl [&_h2]:mt-8 [&_h2]:mb-3
-          [&_p]:text-brand-gray [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_strong]:text-brand-navy">
+          [&_h2]:text-brand-blue [&_h2]:font-heading [&_h2]:font-bold [&_h2]:text-2xl [&_h2]:mt-8 [&_h2]:mb-3
+          [&_p]:text-brand-gray [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_strong]:text-brand-blue">
           <ArticleContent slug={params.slug} />
         </div>
 
-        <div className="mt-12 bg-brand-navy rounded-2xl p-8 text-center text-white">
+        <div className="mt-12 bg-brand-blue rounded-2xl p-8 text-center text-white">
           <h2 className="text-xl font-heading font-bold mb-2">Остались вопросы?</h2>
           <p className="text-white/70 text-sm mb-5">Вызовите замерщика бесплатно — он ответит на все вопросы на месте.</p>
           <div className="flex flex-wrap gap-3 justify-center">
@@ -142,15 +142,15 @@ export default function BlogArticlePage({ params }: Props) {
         </div>
 
         <div className="mt-14">
-          <h3 className="font-heading font-bold text-brand-navy text-xl mb-6">Читайте также</h3>
+          <h3 className="font-heading font-bold text-brand-blue text-xl mb-6">Читайте также</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {articles
               .filter((a) => a.slug !== params.slug)
               .slice(0, 4)
               .map((a) => (
                 <Link key={a.slug} href={`/blog/${a.slug}`} className="card p-4 group">
-                  <span className="text-xs text-brand-gold font-semibold">{a.category}</span>
-                  <p className="text-brand-navy text-sm font-semibold mt-1 leading-snug group-hover:text-brand-navyLight transition-colors">
+                  <span className="text-xs text-brand-red font-semibold">{a.category}</span>
+                  <p className="text-brand-blue text-sm font-semibold mt-1 leading-snug group-hover:text-brand-blueLight transition-colors">
                     {a.title}
                   </p>
                 </Link>

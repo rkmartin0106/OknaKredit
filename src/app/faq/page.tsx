@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { buildFaqSchema, buildBreadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Частые вопросы об окнах — ответы специалиста | ОкнаКредит СПб",
+  title: "Частые вопросы об окнах — ответы специалиста | Окна-Кредит СПб",
   description:
     "Ответы на самые популярные вопросы: сколько стоят пластиковые окна в СПб, как выбрать стеклопакет, сколько длится монтаж, что такое энергосберегающее окно.",
   keywords: [
@@ -101,7 +101,7 @@ export default function FaqPage() {
       ])} />
 
       {/* Hero */}
-      <section className="bg-brand-navy text-white py-16 md:py-20">
+      <section className="bg-brand-blue text-white py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="text-xs text-white/50 mb-4 flex items-center gap-2">
             <Link href="/" className="hover:text-white transition-colors">Главная</Link>
@@ -127,11 +127,11 @@ export default function FaqPage() {
               className="group bg-white rounded-xl shadow-card border border-gray-100 open:shadow-cardHover transition-shadow"
             >
               <summary className="flex items-center justify-between cursor-pointer px-6 py-5 list-none">
-                <h2 className="text-brand-navy font-semibold text-base md:text-lg pr-4 leading-snug">
+                <h2 className="text-brand-blue font-semibold text-base md:text-lg pr-4 leading-snug">
                   {faq.q}
                 </h2>
                 <svg
-                  className="w-5 h-5 text-brand-gold shrink-0 transition-transform duration-200 group-open:rotate-45"
+                  className="w-5 h-5 text-brand-red shrink-0 transition-transform duration-200 group-open:rotate-45"
                   fill="none" stroke="currentColor" viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -145,7 +145,7 @@ export default function FaqPage() {
         </div>
 
         {/* CTA */}
-        <div className="mt-14 bg-brand-navy rounded-2xl p-8 text-center text-white">
+        <div className="mt-14 bg-brand-blue rounded-2xl p-8 text-center text-white">
           <h2 className="text-2xl font-heading font-bold mb-3">Остались вопросы?</h2>
           <p className="text-white/70 mb-6 max-w-md mx-auto">
             Позвоните нам или оставьте заявку — замерщик приедет бесплатно и ответит на все вопросы лично.

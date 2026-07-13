@@ -4,7 +4,7 @@ import { districts } from "@/lib/districts";
 import JsonLd, { buildBreadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Пластиковые окна по районам Санкт-Петербурга | ОкнаКредит",
+  title: "Пластиковые окна по районам Санкт-Петербурга | Окна-Кредит",
   description:
     "Выберите свой район СПб — узнайте цены на металлопластиковые окна и закажите бесплатный замер. Работаем во всех районах Петербурга и Ленобласти.",
   keywords: [
@@ -27,7 +27,7 @@ export default function DistrictsIndexPage() {
         { name: "По районам", url: "/okna" },
       ])} />
 
-      <section className="bg-brand-navy text-white py-16 md:py-20">
+      <section className="bg-brand-blue text-white py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-heading font-bold">
             Окна по районам Санкт-Петербурга
@@ -48,14 +48,14 @@ export default function DistrictsIndexPage() {
               className="card p-5 flex items-center justify-between group hover:shadow-cardHover transition-shadow"
             >
               <div>
-                <p className="font-semibold text-brand-navy group-hover:text-brand-navyLight transition-colors">
+                <p className="font-semibold text-brand-blue group-hover:text-brand-blueLight transition-colors">
                   {d.name}
                 </p>
                 {d.metro && (
                   <p className="text-xs text-brand-gray mt-0.5">м. {d.metro[0]}</p>
                 )}
               </div>
-              <svg className="w-5 h-5 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </Link>
@@ -71,10 +71,10 @@ export default function DistrictsIndexPage() {
               className="card p-5 flex items-center justify-between group hover:shadow-cardHover transition-shadow"
             >
               <div>
-                <p className="font-semibold text-brand-navy group-hover:text-brand-navyLight transition-colors">{d.name}</p>
+                <p className="font-semibold text-brand-blue group-hover:text-brand-blueLight transition-colors">{d.name}</p>
                 <p className="text-xs text-brand-gray mt-0.5">{d.district}</p>
               </div>
-              <svg className="w-5 h-5 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </Link>

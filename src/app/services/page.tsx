@@ -61,7 +61,7 @@ const services = [
 export default function ServicesPage() {
   return (
     <div>
-      <section className="bg-brand-navy text-white py-20 md:py-24">
+      <section className="bg-brand-blue text-white py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-heading font-bold max-w-2xl">Услуги</h1>
           <p className="mt-5 text-white/70 text-lg max-w-xl">
@@ -75,7 +75,7 @@ export default function ServicesPage() {
           {services.map((s) => (
             <div key={s.title} className="card p-6">
               <div className="flex items-start justify-between gap-3 mb-3">
-                <h3 className="font-heading font-semibold text-brand-navy text-lg leading-snug">{s.title}</h3>
+                <h3 className="font-heading font-semibold text-brand-blue text-lg leading-snug">{s.title}</h3>
                 {s.included && (
                   <span className="bg-green-100 text-green-700 text-xs font-bold px-2.5 py-1 rounded-full shrink-0">
                     Бесплатно
@@ -85,8 +85,8 @@ export default function ServicesPage() {
               <p className="text-brand-gray text-sm leading-relaxed mb-4">{s.desc}</p>
               <ul className="space-y-1.5">
                 {s.details.map((d) => (
-                  <li key={d} className="flex items-center gap-2 text-sm text-brand-navy">
-                    <svg className="w-4 h-4 text-brand-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <li key={d} className="flex items-center gap-2 text-sm text-brand-blue">
+                    <svg className="w-4 h-4 text-brand-red shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     {d}
@@ -97,7 +97,7 @@ export default function ServicesPage() {
           ))}
         </div>
 
-        <div className="mt-14 bg-brand-navy rounded-2xl p-8 md:p-12 text-center text-white">
+        <div className="mt-14 bg-brand-blue rounded-2xl p-8 md:p-12 text-center text-white">
           <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">Нужна консультация?</h2>
           <p className="text-white/70 max-w-lg mx-auto mb-6">
             Позвоните нам или оставьте заявку — ответим на любые вопросы и рассчитаем стоимость под ваш объект.

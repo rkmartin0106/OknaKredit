@@ -44,8 +44,8 @@ export default function ProductsPage({
             href={key === "all" ? "/products" : `/products?cat=${key}`}
             className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
               (key === "all" && !activeCat) || key === activeCat
-                ? "bg-brand-navy text-white border-brand-navy"
-                : "border-gray-200 text-brand-gray hover:border-brand-navy hover:text-brand-navy"
+                ? "bg-brand-blue text-white border-brand-blue"
+                : "border-gray-200 text-brand-gray hover:border-brand-blue hover:text-brand-blue"
             }`}
           >
             {label}
@@ -65,7 +65,7 @@ export default function ProductsPage({
       )}
 
       {/* CTA */}
-      <div className="mt-16 bg-brand-navy rounded-2xl p-8 md:p-12 text-center text-white">
+      <div className="mt-16 bg-brand-blue rounded-2xl p-8 md:p-12 text-center text-white">
         <h2 className="text-2xl font-heading font-bold mb-3">Не нашли нужное?</h2>
         <p className="text-white/70 max-w-lg mx-auto mb-6">
           Мы изготавливаем конструкции любой сложности, нестандартных форм и размеров. Свяжитесь с нами — рассчитаем индивидуально.

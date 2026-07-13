@@ -100,11 +100,11 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-brand-navy overflow-hidden">
+      <section className="relative bg-brand-blue overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36">
           <div className="max-w-3xl">
-            <span className="inline-block bg-brand-gold/20 text-brand-gold text-sm font-semibold px-4 py-1.5 rounded-full mb-5">
+            <span className="inline-block bg-brand-red/20 text-brand-red text-sm font-semibold px-4 py-1.5 rounded-full mb-5">
               Производитель · Бесплатный замер · Гарантия 5 лет
             </span>
             <h1 className="text-4xl md:text-6xl font-heading font-bold text-white leading-tight">
@@ -141,7 +141,7 @@ export default function HomePage() {
       {/* Benefits */}
       <section className="container-section">
         <div className="text-center mb-12">
-          <h2 className="section-heading">Почему выбирают ОкнаКредит?</h2>
+          <h2 className="section-heading">Почему выбирают Окна-Кредит?</h2>
           <p className="section-subheading mx-auto">
             Работаем напрямую с заказчиком — без дилеров, без накруток. Только немецкое качество по честной цене.
           </p>
@@ -149,9 +149,9 @@ export default function HomePage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((b) => (
             <div key={b.title} className="flex gap-4">
-              <div className="text-brand-gold shrink-0 mt-1">{b.icon}</div>
+              <div className="text-brand-red shrink-0 mt-1">{b.icon}</div>
               <div>
-                <h3 className="font-semibold text-brand-navy text-lg">{b.title}</h3>
+                <h3 className="font-semibold text-brand-blue text-lg">{b.title}</h3>
                 <p className="text-brand-gray text-sm mt-1 leading-relaxed">{b.desc}</p>
               </div>
             </div>
@@ -180,7 +180,7 @@ export default function HomePage() {
       </section>
 
       {/* Process */}
-      <section className="bg-brand-navy py-16 md:py-24">
+      <section className="bg-brand-blue py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">Как мы работаем</h2>
@@ -189,7 +189,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {process.map((p) => (
               <div key={p.step} className="text-center">
-                <div className="w-14 h-14 rounded-full border-2 border-brand-gold text-brand-gold font-bold text-xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-14 h-14 rounded-full border-2 border-brand-red text-brand-red font-bold text-xl flex items-center justify-center mx-auto mb-4">
                   {p.step}
                 </div>
                 <h3 className="text-white font-semibold mb-2">{p.title}</h3>
@@ -201,19 +201,19 @@ export default function HomePage() {
       </section>
 
       {/* CTA Banner */}
-      <section className="bg-brand-gold">
+      <section className="bg-brand-red">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 text-center">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-brand-navyDark">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-brand-blueDark">
             Хотите узнать точную стоимость?
           </h2>
-          <p className="mt-3 text-brand-navyDark/70 text-lg max-w-xl mx-auto">
+          <p className="mt-3 text-brand-blueDark/70 text-lg max-w-xl mx-auto">
             Вызовите замерщика бесплатно — он приедет в удобное время, измерит проёмы и рассчитает цену прямо на месте.
           </p>
           <div className="mt-7 flex flex-wrap gap-4 justify-center">
-            <Link href="/contact" className="btn-outline border-brand-navyDark text-brand-navyDark hover:bg-brand-navyDark hover:text-white text-base py-3.5 px-10">
+            <Link href="/contact" className="btn-outline border-brand-blueDark text-brand-blueDark hover:bg-brand-blueDark hover:text-white text-base py-3.5 px-10">
               Заказать замер
             </Link>
-            <a href="tel:+78125291104" className="inline-flex items-center gap-2 bg-brand-navyDark text-white font-semibold px-8 py-3.5 rounded-md hover:bg-brand-navy transition-colors text-base">
+            <a href="tel:+78125291104" className="inline-flex items-center gap-2 bg-brand-blueDark text-white font-semibold px-8 py-3.5 rounded-md hover:bg-brand-blue transition-colors text-base">
               +7 (812) 529-11-04
             </a>
           </div>
@@ -246,8 +246,8 @@ export default function HomePage() {
           ].map((b) => (
             <div key={b.name} className="bg-white rounded-xl shadow-card p-6">
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-heading font-semibold text-brand-navy text-lg">{b.name}</h3>
-                <span className="text-xs bg-brand-navy/10 text-brand-navy px-2 py-1 rounded-full shrink-0 ml-2">{b.origin}</span>
+                <h3 className="font-heading font-semibold text-brand-blue text-lg">{b.name}</h3>
+                <span className="text-xs bg-brand-blue/10 text-brand-blue px-2 py-1 rounded-full shrink-0 ml-2">{b.origin}</span>
               </div>
               <p className="text-brand-gray text-sm leading-relaxed">{b.desc}</p>
             </div>
@@ -266,13 +266,13 @@ export default function HomePage() {
               <div key={t.name} className="card p-6">
                 <div className="flex gap-0.5 mb-3">
                   {Array.from({ length: t.stars }).map((_, i) => (
-                    <svg key={i} className="w-4 h-4 text-brand-gold" fill="currentColor" viewBox="0 0 20 20">
+                    <svg key={i} className="w-4 h-4 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                   ))}
                 </div>
                 <p className="text-brand-gray text-sm leading-relaxed">&laquo;{t.text}&raquo;</p>
-                <div className="mt-4 font-semibold text-brand-navy text-sm">
+                <div className="mt-4 font-semibold text-brand-blue text-sm">
                   {t.name} <span className="font-normal text-brand-gray">— {t.location}</span>
                 </div>
               </div>

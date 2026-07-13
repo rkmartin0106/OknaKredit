@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Галерея работ",
   description:
-    "Галерея выполненных объектов ОкнаКредит — металлопластиковые окна, остекление балконов, алюминиевые конструкции в Санкт-Петербурге.",
+    "Галерея выполненных объектов Окна-Кредит — металлопластиковые окна, остекление балконов, алюминиевые конструкции в Санкт-Петербурге.",
 };
 
 const galleryItems = [
@@ -33,27 +33,27 @@ export default function GalleryPage() {
         {galleryItems.map((item) => (
           <div key={item.id} className="card group cursor-pointer">
             {/* Image placeholder */}
-            <div className="bg-brand-navy/8 h-56 flex items-center justify-center relative overflow-hidden group-hover:bg-brand-navy/12 transition-colors">
-              <svg className="w-16 h-16 text-brand-navy/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-brand-blue/8 h-56 flex items-center justify-center relative overflow-hidden group-hover:bg-brand-blue/12 transition-colors">
+              <svg className="w-16 h-16 text-brand-blue/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth={1.5} />
                 <line x1="3" y1="9" x2="21" y2="9" strokeWidth={1.5} />
                 <line x1="12" y1="9" x2="12" y2="21" strokeWidth={1.5} />
               </svg>
-              <div className="absolute inset-0 bg-brand-navy/0 group-hover:bg-brand-navy/40 transition-colors flex items-center justify-center">
+              <div className="absolute inset-0 bg-brand-blue/0 group-hover:bg-brand-blue/40 transition-colors flex items-center justify-center">
                 <span className="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity text-sm">
                   Смотреть
                 </span>
               </div>
             </div>
             <div className="p-4">
-              <p className="text-xs text-brand-gold font-semibold uppercase tracking-wider">{item.type} · {item.year}</p>
-              <h3 className="text-brand-navy font-semibold mt-1">{item.title}</h3>
+              <p className="text-xs text-brand-red font-semibold uppercase tracking-wider">{item.type} · {item.year}</p>
+              <h3 className="text-brand-blue font-semibold mt-1">{item.title}</h3>
             </div>
           </div>
         ))}
       </div>
 
-      <div className="mt-16 bg-brand-navy/5 rounded-2xl p-8 text-center">
+      <div className="mt-16 bg-brand-blue/5 rounded-2xl p-8 text-center">
         <p className="text-brand-gray text-sm">
           Больше фотографий — в нашем сообществе ВКонтакте. Хотите обсудить ваш проект?
         </p>

@@ -20,7 +20,7 @@ export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
   "@id": "https://oknakredit.ru/#organization",
-  name: "ОкнаКредит",
+  name: "Окна-Кредит",
   alternateName: "OknaKredit",
   description:
     "Производство и установка металлопластиковых окон и дверей в Санкт-Петербурге. Профиль GEALAN, фурнитура ROTO FRANK. Бесплатный замер, монтаж под ключ, гарантия 5 лет.",
@@ -79,7 +79,7 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": "https://oknakredit.ru/#org",
-  name: "ООО «ОкнаКредит»",
+  name: "ООО «Окна-Кредит»",
   url: "https://oknakredit.ru",
   logo: "https://oknakredit.ru/images/logo.png",
   contactPoint: [
@@ -111,7 +111,7 @@ export const websiteSchema = {
   "@type": "WebSite",
   "@id": "https://oknakredit.ru/#website",
   url: "https://oknakredit.ru",
-  name: "ОкнаКредит",
+  name: "Окна-Кредит",
   description: "Металлопластиковые окна от производителя в Санкт-Петербурге",
   publisher: { "@id": "https://oknakredit.ru/#organization" },
   potentialAction: {
@@ -147,10 +147,10 @@ export function buildProductSchema(product: {
     "@type": "Product",
     name: product.name,
     description: product.description,
-    brand: { "@type": "Brand", name: "ОкнаКредит" },
+    brand: { "@type": "Brand", name: "Окна-Кредит" },
     manufacturer: {
       "@type": "Organization",
-      name: "ООО «ОкнаКредит»",
+      name: "ООО «Окна-Кредит»",
       address: { "@type": "PostalAddress", addressLocality: "Санкт-Петербург", addressCountry: "RU" },
     },
     url: `https://oknakredit.ru/products/${product.slug}`,

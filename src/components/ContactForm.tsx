@@ -36,7 +36,7 @@ export default function ContactForm() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-xl font-heading font-semibold text-brand-navy mb-2">Заявка отправлена!</h3>
+        <h3 className="text-xl font-heading font-semibold text-brand-blue mb-2">Заявка отправлена!</h3>
         <p className="text-brand-gray">Мы перезвоним вам в течение 30 минут в рабочее время.</p>
         <button onClick={() => setSubmitted(false)} className="btn-outline mt-6 text-sm py-2 px-5">
           Отправить ещё
@@ -46,14 +46,14 @@ export default function ContactForm() {
   }
 
   const inputClass =
-    "w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-navy/30 focus:border-brand-navy transition-colors";
+    "w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-colors";
   const errorClass = "text-red-500 text-xs mt-1";
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label className="block text-sm font-medium text-brand-navy mb-1">Ваше имя *</label>
+          <label className="block text-sm font-medium text-brand-blue mb-1">Ваше имя *</label>
           <input
             {...register("name", { required: "Введите имя" })}
             placeholder="Иван Иванов"
@@ -62,7 +62,7 @@ export default function ContactForm() {
           {errors.name && <p className={errorClass}>{errors.name.message}</p>}
         </div>
         <div>
-          <label className="block text-sm font-medium text-brand-navy mb-1">Телефон *</label>
+          <label className="block text-sm font-medium text-brand-blue mb-1">Телефон *</label>
           <input
             {...register("phone", { required: "Введите номер телефона" })}
             placeholder="+7 (___) ___-__-__"
@@ -73,7 +73,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-brand-navy mb-1">Email</label>
+        <label className="block text-sm font-medium text-brand-blue mb-1">Email</label>
         <input
           {...register("email", {
             pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Некорректный email" },
@@ -85,7 +85,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-brand-navy mb-1">Интересующая продукция</label>
+        <label className="block text-sm font-medium text-brand-blue mb-1">Интересующая продукция</label>
         <select {...register("product")} className={inputClass}>
           <option value="">— Выберите тип —</option>
           <option value="pvh">ПВХ-окна (металлопластиковые)</option>
@@ -97,7 +97,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-brand-navy mb-1">Комментарий</label>
+        <label className="block text-sm font-medium text-brand-blue mb-1">Комментарий</label>
         <textarea
           {...register("message")}
           rows={4}

@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const d = getDistrictBySlug(params.district);
   if (!d) return { title: "Страница не найдена" };
 
-  const title = `Пластиковые окна ${d.nameIn} — цены от производителя | ОкнаКредит`;
+  const title = `Пластиковые окна ${d.nameIn} — цены от производителя | Окна-Кредит`;
   const description = `Металлопластиковые окна ${d.nameIn} (${d.district}). Профиль GEALAN, установка под ключ. Бесплатный замер — выезжаем ${d.nameIn}. Цены от 4 900 ₽/м². Гарантия 5 лет.`;
 
   return {
@@ -78,7 +78,7 @@ export default function DistrictPage({ params }: Props) {
       ])} />
 
       {/* Hero */}
-      <section className="bg-brand-navy text-white py-16 md:py-24">
+      <section className="bg-brand-blue text-white py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="text-xs text-white/50 mb-4 flex items-center gap-2 flex-wrap">
             <Link href="/" className="hover:text-white transition-colors">Главная</Link>
@@ -87,7 +87,7 @@ export default function DistrictPage({ params }: Props) {
             <span>/</span>
             <span className="text-white/80">{d.name}</span>
           </nav>
-          <p className="text-brand-gold text-sm font-semibold uppercase tracking-wider mb-3">{d.district}</p>
+          <p className="text-brand-red text-sm font-semibold uppercase tracking-wider mb-3">{d.district}</p>
           <h1 className="text-4xl md:text-5xl font-heading font-bold leading-tight max-w-2xl">
             Пластиковые окна {d.nameIn}
           </h1>
@@ -121,7 +121,7 @@ export default function DistrictPage({ params }: Props) {
             { title: "Гарантия 5 лет", desc: "На изделия и монтажные работы. Гарантийный сервис — бесплатно." },
           ].map((f) => (
             <div key={f.title} className="card p-6">
-              <h3 className="font-semibold text-brand-navy mb-2">{f.title}</h3>
+              <h3 className="font-semibold text-brand-blue mb-2">{f.title}</h3>
               <p className="text-brand-gray text-sm leading-relaxed">{f.desc}</p>
             </div>
           ))}
@@ -137,7 +137,7 @@ export default function DistrictPage({ params }: Props) {
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="bg-brand-navy text-white">
+                <tr className="bg-brand-blue text-white">
                   <th className="text-left px-4 py-3 rounded-tl-lg">Тип окна</th>
                   <th className="text-left px-4 py-3">Стеклопакет</th>
                   <th className="text-left px-4 py-3">U-value</th>
@@ -152,10 +152,10 @@ export default function DistrictPage({ params }: Props) {
                   ["Алюминиевое Slim Line (терморазрыв)", "Двухкамерный",               "1,4 Вт/м²·К", "12 500 ₽/м²"],
                 ].map(([name, glass, u, price], i) => (
                   <tr key={i} className={i % 2 === 0 ? "bg-brand-cream" : "bg-white"}>
-                    <td className="px-4 py-3 font-medium text-brand-navy">{name}</td>
+                    <td className="px-4 py-3 font-medium text-brand-blue">{name}</td>
                     <td className="px-4 py-3 text-brand-gray">{glass}</td>
                     <td className="px-4 py-3 text-brand-gray">{u}</td>
-                    <td className="px-4 py-3 font-semibold text-brand-navy">{price}</td>
+                    <td className="px-4 py-3 font-semibold text-brand-blue">{price}</td>
                   </tr>
                 ))}
               </tbody>
@@ -172,8 +172,8 @@ export default function DistrictPage({ params }: Props) {
           {faqs.map((faq, i) => (
             <details key={i} className="group bg-white rounded-xl shadow-card border border-gray-100">
               <summary className="flex items-center justify-between cursor-pointer px-6 py-4 list-none">
-                <span className="font-semibold text-brand-navy text-sm md:text-base pr-4">{faq.q}</span>
-                <svg className="w-5 h-5 text-brand-gold shrink-0 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <span className="font-semibold text-brand-blue text-sm md:text-base pr-4">{faq.q}</span>
+                <svg className="w-5 h-5 text-brand-red shrink-0 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                 </svg>
               </summary>
@@ -184,19 +184,19 @@ export default function DistrictPage({ params }: Props) {
       </section>
 
       {/* CTA */}
-      <section className="bg-brand-gold py-14">
+      <section className="bg-brand-red py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-heading font-bold text-brand-navyDark">
+          <h2 className="text-3xl font-heading font-bold text-brand-blueDark">
             Нужны окна {d.nameIn}?
           </h2>
-          <p className="mt-3 text-brand-navyDark/70 text-lg max-w-lg mx-auto">
+          <p className="mt-3 text-brand-blueDark/70 text-lg max-w-lg mx-auto">
             Оставьте заявку — замерщик приедет {d.nameIn} бесплатно и рассчитает стоимость прямо на месте.
           </p>
           <div className="mt-7 flex flex-wrap gap-4 justify-center">
-            <Link href="/contact" className="btn-outline border-brand-navyDark text-brand-navyDark hover:bg-brand-navyDark hover:text-white">
+            <Link href="/contact" className="btn-outline border-brand-blueDark text-brand-blueDark hover:bg-brand-blueDark hover:text-white">
               Заказать замер {d.nameIn}
             </Link>
-            <a href="tel:+78125291104" className="inline-flex items-center gap-2 bg-brand-navyDark text-white font-semibold px-8 py-3 rounded-md hover:bg-brand-navy transition-colors">
+            <a href="tel:+78125291104" className="inline-flex items-center gap-2 bg-brand-blueDark text-white font-semibold px-8 py-3 rounded-md hover:bg-brand-blue transition-colors">
               +7 (812) 529-11-04
             </a>
           </div>
