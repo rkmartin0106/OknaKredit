@@ -22,7 +22,8 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-brand-blue shadow-md">
       {/* Top bar */}
       <div className="bg-brand-blueDark text-white/60 text-xs py-1.5 hidden md:block">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-end items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+          <span>Отвечаем Пн-Сб 9:00-20:00</span>
           <a href="mailto:info@oknakredit.spb.ru" className="hover:text-white transition-colors">
             info@oknakredit.spb.ru
           </a>
@@ -53,22 +54,19 @@ export default function Header() {
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <div className="text-right">
-              <p className="text-white/50 text-xs mb-0.5">Отвечаем Пн-Сб 9:00-20:00</p>
-              <div className="flex flex-col leading-tight">
-                <a
-                  href="tel:+78129650040"
-                  className="text-white font-semibold text-sm hover:text-brand-red transition-colors"
-                >
-                  +7 (812) 965-00-40
-                </a>
-                <a
-                  href="tel:+78125291104"
-                  className="text-white font-semibold text-sm hover:text-brand-red transition-colors"
-                >
-                  +7 (812) 529-11-04
-                </a>
-              </div>
+            <div className="flex flex-col leading-tight tabular-nums">
+              <a
+                href="tel:+78129650040"
+                className="text-white font-semibold text-sm hover:text-brand-red transition-colors"
+              >
+                +7 (812) 965-00-40
+              </a>
+              <a
+                href="tel:+78125291104"
+                className="text-white font-semibold text-sm hover:text-brand-red transition-colors"
+              >
+                +7 (812) 529-11-04
+              </a>
             </div>
             <Link href="/contact" className="btn-primary text-sm py-2 px-4">
               Бесплатный замер
