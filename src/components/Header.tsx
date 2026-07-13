@@ -23,10 +23,13 @@ export default function Header() {
       {/* Top bar */}
       <div className="bg-brand-blueDark text-white/60 text-xs py-1.5 hidden md:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-          <span>Отвечаем Пн-Сб 9:00-20:00</span>
           <a href="mailto:info@oknakredit.spb.ru" className="hover:text-white transition-colors">
             info@oknakredit.spb.ru
           </a>
+          <div className="flex items-center gap-4">
+            <span>Отвечаем Пн-Сб 9:00-20:00</span>
+            <span className="invisible btn-primary text-sm py-2 px-4" aria-hidden="true">Бесплатный замер</span>
+          </div>
         </div>
       </div>
 
