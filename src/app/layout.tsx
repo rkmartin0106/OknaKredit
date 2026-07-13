@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import YandexMetrica from "@/components/YandexMetrica";
 import JsonLd, { localBusinessSchema, organizationSchema, websiteSchema } from "@/components/JsonLd";
 
 const BASE_URL = "https://oknakredit.ru";
@@ -66,7 +65,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd data={websiteSchema} />
       </head>
       <body>
-        <YandexMetrica />
         <Header />
         <main>{children}</main>
         <Footer />
