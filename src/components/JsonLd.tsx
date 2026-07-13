@@ -23,7 +23,7 @@ export const localBusinessSchema = {
   name: "Окна-Кредит",
   alternateName: "OknaKredit",
   description:
-    "Производство и установка металлопластиковых окон и дверей в Санкт-Петербурге. Профиль GEALAN, фурнитура ROTO FRANK. Бесплатный замер, монтаж под ключ, гарантия 3 года.",
+    "Производство и установка металлопластиковых окон и дверей в Санкт-Петербурге. Профили RIHAU и IVAPER, фурнитура ROTO FRANK. Бесплатный замер, монтаж под ключ, гарантия 3 года.",
   url: "https://oknakredit.ru",
   telephone: ["+7 (812) 529-11-04", "+7 (812) 529-16-56"],
   email: "info@oknakredit.ru",
@@ -164,8 +164,8 @@ export function buildProductSchema(product: {
     },
     additionalProperty: [
       { "@type": "PropertyValue", name: "Теплоизоляция (U-value)", value: product.ufactor },
-      { "@type": "PropertyValue", name: "Производитель профиля", value: "GEALAN (Германия)" },
-      { "@type": "PropertyValue", name: "Фурнитура", value: "ROTO FRANK (Германия)" },
+      { "@type": "PropertyValue", name: "Производитель профиля", value: "RIHAU и IVAPER" },
+      { "@type": "PropertyValue", name: "Фурнитура", value: "ROTO FRANK" },
     ],
   };
 }

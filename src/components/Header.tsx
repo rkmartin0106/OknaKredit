@@ -35,7 +35,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <span className="text-2xl font-heading font-bold text-white">
-              Окна<span className="text-brand-red">Кредит</span>
+              Окна-<span className="text-brand-red">Кредит</span>
             </span>
           </Link>
 

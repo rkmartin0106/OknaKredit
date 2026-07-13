@@ -8,10 +8,10 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <span className="text-2xl font-heading font-bold">
-              Окна<span className="text-brand-red">Кредит</span>
+              Окна-<span className="text-brand-red">Кредит</span>
             </span>
             <p className="mt-3 text-white/60 text-sm leading-relaxed">
-              Производство и установка металлопластиковых окон и дверей. Профиль GEALAN, фурнитура ROTO FRANK. Работаем без посредников.
+              Производство и установка металлопластиковых окон и дверей. Профили RIHAU и IVAPER, фурнитура ROTO FRANK. Работаем без посредников.
             </p>
             <div className="flex gap-3 mt-4">
               <a href="#" aria-label="ВКонтакте" className="text-white/50 hover:text-brand-red transition-colors">

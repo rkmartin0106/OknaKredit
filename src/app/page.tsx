@@ -6,7 +6,7 @@ import { products } from "@/lib/products";
 export const metadata: Metadata = {
   title: "OknaKredit — Металлопластиковые окна от производителя в СПб",
   description:
-    "Производство и установка металлопластиковых окон, алюминиевых конструкций и остекления балконов. Профиль GEALAN. Бесплатный замер. Монтаж под ключ. Гарантия 3 года.",
+    "Производство и установка металлопластиковых окон, алюминиевых конструкций и остекления балконов. Профили RIHAU и IVAPER. Бесплатный замер. Монтаж под ключ. Гарантия 3 года.",
 };
 
 const benefits = [
@@ -17,7 +17,7 @@ const benefits = [
       </svg>
     ),
     title: "Немецкое качество",
-    desc: "Профиль GEALAN (Германия) со сроком службы 50 условных лет. Фурнитура ROTO FRANK с периметральным запиранием.",
+    desc: "Профили RIHAU и IVAPER со сроком службы 50 условных лет. Фурнитура ROTO FRANK с периметральным запиранием.",
   },
   {
     icon: (
@@ -76,7 +76,7 @@ const testimonials = [
   {
     name: "Игорь С.",
     location: "Ленинградская область",
-    text: "Заказывали остекление лоджии с утеплением. Сделали за один день — демонтаж, монтаж ПВХ-конструкции и откосы. Качество профиля GEALAN заметно даже на ощупь.",
+    text: "Заказывали остекление лоджии с утеплением. Сделали за один день — демонтаж, монтаж ПВХ-конструкции и откосы. Качество профиля RIHAU заметно даже на ощупь.",
     stars: 5,
   },
   {
@@ -111,7 +111,7 @@ export default function HomePage() {
               Металлопластиковые окна от производителя
             </h1>
             <p className="mt-6 text-white/70 text-lg md:text-xl leading-relaxed max-w-2xl">
-              Профиль GEALAN (Германия), фурнитура ROTO FRANK, стеклопакеты собственного производства. Монтаж под ключ без посредников — вы экономите до 30%.
+              Профили RIHAU и IVAPER, фурнитура ROTO FRANK, стеклопакеты на все случаи жизни. Монтаж под ключ без посредников — вы экономите до 30%.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link href="/contact" className="btn-primary text-base py-3.5 px-8">
@@ -123,8 +123,8 @@ export default function HomePage() {
             </div>
             <div className="mt-10 flex flex-wrap gap-8 text-white/60 text-sm">
               {[
-                ["2 000+", "выполненных объектов"],
-                ["15+", "лет на рынке"],
+                ["2500+", "выполненных объектов"],
+                ["20+", "лет на рынке"],
                 ["3 года", "гарантия"],
                 ["3%", "скидка с сайта"],
               ].map(([val, label]) => (
@@ -229,13 +229,11 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
-              name: "Профиль GEALAN",
-              origin: "Германия",
-              desc: "ПВХ-профильные системы GEALAN S3000 и S8000 IQ — многокамерная конструкция, оцинкованное стальное армирование, срок службы 50 условных лет. Сертификат соответствия Госстрой.",
+              name: "Профили RIHAU и IVAPER",
+              desc: "Многокамерная конструкция, оцинкованное стальное армирование, срок службы 50 условных лет. Сертификат соответствия Госстрой.",
             },
             {
               name: "Фурнитура ROTO FRANK",
-              origin: "Германия",
               desc: "Периметральное запирание по всему периметру створки. Двухплоскостное прижатие одной ручкой. Антивзломная защита. Плавная регулировка прижима и положения створки.",
             },
             {
@@ -247,7 +245,9 @@ export default function HomePage() {
             <div key={b.name} className="bg-white rounded-xl shadow-card p-6">
               <div className="flex items-start justify-between mb-3">
                 <h3 className="font-heading font-semibold text-brand-blue text-lg">{b.name}</h3>
-                <span className="text-xs bg-brand-blue/10 text-brand-blue px-2 py-1 rounded-full shrink-0 ml-2">{b.origin}</span>
+                {b.origin && (
+                  <span className="text-xs bg-brand-blue/10 text-brand-blue px-2 py-1 rounded-full shrink-0 ml-2">{b.origin}</span>
+                )}
               </div>
               <p className="text-brand-gray text-sm leading-relaxed">{b.desc}</p>
             </div>
