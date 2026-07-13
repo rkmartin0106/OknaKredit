@@ -10,12 +10,12 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          blue:     "#1e4d8c",
-          blueDark: "#0f2f5c",
-          blueLight:"#3a6cad",
-          red:      "#c73832",
-          redLight: "#e0574f",
-          cream:    "#f8f5f0",
+          blue:     "#5E657B",
+          blueDark: "#210706",
+          blueLight:"#868C9C",
+          red:      "#891D1A",
+          redLight: "#A75653",
+          cream:    "#F1E6D2",
           gray:     "#6b7280",
         },
       },
@@ -24,8 +24,8 @@ const config: Config = {
         heading: ["Playfair Display", "Georgia", "serif"],
       },
       boxShadow: {
-        card: "0 4px 20px rgba(26,60,94,0.10)",
-        cardHover: "0 8px 32px rgba(26,60,94,0.18)",
+        card: "0 4px 20px rgba(94,101,123,0.10)",
+        cardHover: "0 8px 32px rgba(94,101,123,0.18)",
       },
     },
   },

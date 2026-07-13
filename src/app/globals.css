@@ -25,7 +25,7 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 bg-brand-red text-brand-blueDark font-semibold px-6 py-3 rounded-md hover:bg-brand-redLight transition-colors duration-200 shadow-md;
+    @apply inline-flex items-center justify-center gap-2 bg-brand-red text-white font-semibold px-6 py-3 rounded-md hover:bg-brand-redLight transition-colors duration-200 shadow-md;
   }
   .btn-outline {
     @apply inline-flex items-center justify-center gap-2 border-2 border-brand-blue text-brand-blue font-semibold px-6 py-3 rounded-md hover:bg-brand-blue hover:text-white transition-colors duration-200;

@@ -16,7 +16,7 @@ export default function ProductCard({ product }: Props) {
           <line x1="12" y1="9" x2="12" y2="21" strokeWidth={1.5} />
         </svg>
         {product.badge && (
-          <span className="absolute top-3 left-3 bg-brand-red text-brand-blueDark text-xs font-bold px-2.5 py-1 rounded-full">
+          <span className="absolute top-3 left-3 bg-brand-red text-white text-xs font-bold px-2.5 py-1 rounded-full">
             {product.badge}
           </span>
         )}

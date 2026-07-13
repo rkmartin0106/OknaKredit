@@ -184,14 +184,14 @@ export default function DistrictPage({ params }: Props) {
       {/* CTA */}
       <section className="bg-brand-red py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-heading font-bold text-brand-blueDark">
+          <h2 className="text-3xl font-heading font-bold text-white">
             Нужны окна {d.nameIn}?
           </h2>
-          <p className="mt-3 text-brand-blueDark/70 text-lg max-w-lg mx-auto">
+          <p className="mt-3 text-white/70 text-lg max-w-lg mx-auto">
             Оставьте заявку — замерщик приедет {d.nameIn} бесплатно и рассчитает стоимость прямо на месте.
           </p>
           <div className="mt-7 flex flex-wrap gap-4 justify-center">
-            <Link href="/contact" className="btn-outline border-brand-blueDark text-brand-blueDark hover:bg-brand-blueDark hover:text-white">
+            <Link href="/contact" className="btn-outline border-white text-white hover:bg-white hover:text-brand-red">
               Заказать замер {d.nameIn}
             </Link>
             <a href="tel:+78125291104" className="inline-flex items-center gap-2 bg-brand-blueDark text-white font-semibold px-8 py-3 rounded-md hover:bg-brand-blue transition-colors">
