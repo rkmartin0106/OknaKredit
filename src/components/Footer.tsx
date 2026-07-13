@@ -72,13 +72,14 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span>ул. Примерная, 12<br />Санкт-Петербург</span>
+                <span>г. Санкт-Петербург,<br />шоссе Революции, д. 88</span>
               </li>
               <li className="flex gap-2">
                 <svg className="w-4 h-4 mt-0.5 shrink-0 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 <div className="flex flex-col gap-0.5">
+                  <a href="tel:+78129650040" className="hover:text-brand-red transition-colors">+7 (812) 965-00-40</a>
                   <a href="tel:+78125291104" className="hover:text-brand-red transition-colors">+7 (812) 529-11-04</a>
                   <a href="tel:+78125291656" className="hover:text-brand-red transition-colors">+7 (812) 529-16-56</a>
                 </div>
@@ -93,7 +94,7 @@ export default function Footer() {
                 <svg className="w-4 h-4 mt-0.5 shrink-0 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span>Пн–Пт: 9:00–19:00<br />Сб: 10:00–17:00</span>
+                <span>Пн–Пт: 10:00–18:00<br />Отвечаем Пн-Сб 9:00-20:00</span>
               </li>
             </ul>
           </div>

@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Контакты",
   description:
-    "Свяжитесь с Окна-Кредит: заказать замер, получить расчёт или задать вопрос. Работаем Пн–Пт 9–19, Сб 10–17. Замер — в любой день бесплатно.",
+    "Свяжитесь с Окна-Кредит: заказать замер, получить расчёт или задать вопрос. Работаем Пн–Пт 10–18. Замер — в любой день бесплатно.",
 };
 
 const contactDetails = [
@@ -16,7 +16,7 @@ const contactDetails = [
       </svg>
     ),
     label: "Адрес",
-    content: <span>ул. Примерная, д. 12<br />Санкт-Петербург, 195279</span>,
+    content: <span>г. Санкт-Петербург,<br />шоссе Революции, д. 88</span>,
     link: null,
   },
   {
@@ -28,6 +28,7 @@ const contactDetails = [
     label: "Телефоны",
     content: (
       <div className="flex flex-col gap-1">
+        <a href="tel:+78129650040" className="text-brand-blue font-medium hover:text-brand-blueLight transition-colors">+7 (812) 965-00-40</a>
         <a href="tel:+78125291104" className="text-brand-blue font-medium hover:text-brand-blueLight transition-colors">+7 (812) 529-11-04</a>
         <a href="tel:+78125291656" className="text-brand-blue font-medium hover:text-brand-blueLight transition-colors">+7 (812) 529-16-56</a>
         <span className="text-xs text-brand-gray">Замерщик: <a href="tel:+79650040000" className="hover:text-brand-blue transition-colors">+7 (965) 004-00-00</a> (ежедневно)</span>
@@ -54,8 +55,8 @@ const contactDetails = [
     label: "Режим работы",
     content: (
       <div>
-        <p className="text-brand-blue font-medium">Пн–Пт: 9:00–19:00</p>
-        <p className="text-brand-blue font-medium">Сб: 10:00–17:00</p>
+        <p className="text-brand-blue font-medium">Пн–Пт: 10:00–18:00</p>
+        <p className="text-brand-blue font-medium">Отвечаем Пн-Сб 9:00-20:00</p>
         <p className="text-brand-gray text-xs mt-1">Замер — в любой день, включая праздники</p>
       </div>
     ),

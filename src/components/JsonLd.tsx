@@ -25,7 +25,7 @@ export const localBusinessSchema = {
   description:
     "Производство и установка металлопластиковых окон и дверей в Санкт-Петербурге. Профили RIHAU и IVAPER, фурнитура ROTO FRANK. Бесплатный замер, монтаж под ключ, гарантия 3 года.",
   url: "https://oknakredit.ru",
-  telephone: ["+7 (812) 529-11-04", "+7 (812) 529-16-56"],
+  telephone: ["+7 (812) 965-00-40", "+7 (812) 529-11-04", "+7 (812) 529-16-56"],
   email: "info@oknakredit.ru",
   foundingDate: "2009",
   priceRange: "₽₽",
@@ -33,10 +33,9 @@ export const localBusinessSchema = {
   paymentAccepted: "Наличные, банковская карта, рассрочка, кредит",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "ул. Примерная, д. 12",
+    streetAddress: "шоссе Революции, д. 88",
     addressLocality: "Санкт-Петербург",
     addressRegion: "Санкт-Петербург",
-    postalCode: "195279",
     addressCountry: "RU",
   },
   geo: {
@@ -52,14 +51,8 @@ export const localBusinessSchema = {
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
-      closes: "19:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Saturday"],
       opens: "10:00",
-      closes: "17:00",
+      closes: "18:00",
     },
   ],
   aggregateRating: {
