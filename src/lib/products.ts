@@ -8,7 +8,6 @@ export interface Product {
   shortDesc: string;
   description: string;
   features: string[];
-  ufactor: string;
   price: string;
   image: string;
   badge?: string;
@@ -30,7 +29,6 @@ export const products: Product[] = [
       "Режимы открывания: поворот и поворот-откидывание",
       "Срок службы профиля — 50 условных лет",
     ],
-    ufactor: "2,6 Вт/м²·К",
     price: "от 4 900 ₽/м²",
     image: "/images/products/pvh-standart.jpg",
     badge: "Хит продаж",
@@ -50,7 +48,6 @@ export const products: Product[] = [
       "Сертификат соответствия Госстрой",
       "Доступен в 300+ цветах по RAL и плёнке",
     ],
-    ufactor: "1,8 Вт/м²·К",
     price: "от 7 200 ₽/м²",
     image: "/images/products/pvh-komfort.jpg",
     badge: "Топ выбор",
@@ -67,10 +64,8 @@ export const products: Product[] = [
       "Профили RIHAU и IVAPER",
       "Селективное стекло с i-coating",
       "Заполнение камер аргоном",
-      "U-значение до 1,0 Вт/м²·К",
       "Снижение счетов за отопление до 40%",
     ],
-    ufactor: "1,0 Вт/м²·К",
     price: "от 9 800 ₽/м²",
     image: "/images/products/pvh-energy.jpg",
     badge: "Энергокласс А",
@@ -90,7 +85,6 @@ export const products: Product[] = [
       "Подходит для панорамного остекления",
       "Высота конструкции до 3 м",
     ],
-    ufactor: "1,4 Вт/м²·К",
     price: "от 12 500 ₽/м²",
     image: "/images/products/alu-slim.jpg",
   },
@@ -109,7 +103,6 @@ export const products: Product[] = [
       "Монтаж крыши над лоджией",
       "Замер бесплатно — в любой день",
     ],
-    ufactor: "—",
     price: "от 18 000 ₽ за балкон",
     image: "/images/products/balkon.jpg",
     badge: "Под ключ",
@@ -129,7 +122,6 @@ export const products: Product[] = [
       "Любое остекление стеклопакета",
       "Гарантия 3 года",
     ],
-    ufactor: "1,2 Вт/м²·К",
     price: "от 22 000 ₽/шт.",
     image: "/images/products/door-pvh.jpg",
   },

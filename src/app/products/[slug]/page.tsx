@@ -76,14 +76,8 @@ export default function ProductDetailPage({ params }: Props) {
             <p className="mt-4 text-brand-gray leading-relaxed">{product.description}</p>
 
             {/* Stats */}
-            <div className="mt-8 grid grid-cols-2 gap-4">
-              {product.ufactor !== "—" && (
-                <div className="bg-brand-cream rounded-xl p-4">
-                  <p className="text-xs text-brand-gray font-medium uppercase tracking-wide">Сопр. теплопередаче</p>
-                  <p className="text-xl font-bold text-brand-blue mt-1">{product.ufactor}</p>
-                </div>
-              )}
-              <div className="bg-brand-cream rounded-xl p-4">
+            <div className="mt-8">
+              <div className="bg-brand-cream rounded-xl p-4 inline-block">
                 <p className="text-xs text-brand-gray font-medium uppercase tracking-wide">Стоимость</p>
                 <p className="text-xl font-bold text-brand-blue mt-1">{product.price}</p>
               </div>

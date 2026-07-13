@@ -31,17 +31,9 @@ export default function ProductCard({ product }: Props) {
         </h3>
         <p className="text-brand-gray text-sm mt-2 flex-1 leading-relaxed">{product.shortDesc}</p>
 
-        <div className="mt-4 flex items-center justify-between">
-          {product.ufactor !== "—" && (
-            <div>
-              <p className="text-xs text-brand-gray">Сопротивление теплопередаче</p>
-              <p className="font-semibold text-brand-blue text-sm">{product.ufactor}</p>
-            </div>
-          )}
-          <div className={product.ufactor === "—" ? "" : "text-right"}>
-            <p className="text-xs text-brand-gray">Стоимость</p>
-            <p className="font-semibold text-brand-blue text-sm">{product.price}</p>
-          </div>
+        <div className="mt-4">
+          <p className="text-xs text-brand-gray">Стоимость</p>
+          <p className="font-semibold text-brand-blue text-sm">{product.price}</p>
         </div>
 
         <Link

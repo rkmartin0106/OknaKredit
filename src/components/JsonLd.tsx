@@ -139,7 +139,6 @@ export function buildProductSchema(product: {
   name: string;
   description: string;
   price: string;
-  ufactor: string;
   slug: string;
 }) {
   return {
@@ -163,7 +162,6 @@ export function buildProductSchema(product: {
       areaServed: { "@type": "City", name: "Санкт-Петербург" },
     },
     additionalProperty: [
-      { "@type": "PropertyValue", name: "Теплоизоляция (U-value)", value: product.ufactor },
       { "@type": "PropertyValue", name: "Производитель профиля", value: "RIHAU и IVAPER" },
       { "@type": "PropertyValue", name: "Фурнитура", value: "ROTO FRANK" },
     ],

@@ -117,7 +117,7 @@ export default function DistrictPage({ params }: Props) {
             { title: "Монтаж за 1 день", desc: "Демонтаж старых окон, монтаж, откосы, подоконники — всё за один визит." },
             { title: "Профили RIHAU и IVAPER", desc: "Немецкий ПВХ-профиль с гарантированным сроком службы 50 условных лет. Сертификат Госстрой." },
             { title: "Фурнитура ROTO FRANK", desc: "Периметральное запирание, двухплоскостное прижатие. Антивзломный класс RC2." },
-            { title: "Цены без посредников", desc: "Производим сами — экономия до 30% по сравнению с дилерами." },
+            { title: "Цены без посредников", desc: "Поставляем напрямую с завода — экономия до 30% по сравнению с дилерами." },
             { title: "Гарантия 3 года", desc: "На изделия и монтажные работы. Гарантийный сервис — бесплатно." },
           ].map((f) => (
             <div key={f.title} className="card p-6">
@@ -140,21 +140,19 @@ export default function DistrictPage({ params }: Props) {
                 <tr className="bg-brand-blue text-white">
                   <th className="text-left px-4 py-3 rounded-tl-lg">Тип окна</th>
                   <th className="text-left px-4 py-3">Стеклопакет</th>
-                  <th className="text-left px-4 py-3">U-value</th>
                   <th className="text-left px-4 py-3 rounded-tr-lg">Цена от</th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  ["«Стандарт» ПВХ RIHAU и IVAPER",       "Однокамерный 4-16-4",        "2,6 Вт/м²·К", "4 900 ₽/м²"],
-                  ["«Комфорт» ПВХ RIHAU и IVAPER",        "Двухкамерный 4-10-4-10-4",   "1,8 Вт/м²·К", "7 200 ₽/м²"],
-                  ["Энергосберегающее RIHAU и IVAPER",    "Двухкамерный с i-coating",   "1,0 Вт/м²·К", "9 800 ₽/м²"],
-                  ["Алюминиевое Slim Line (терморазрыв)", "Двухкамерный",               "1,4 Вт/м²·К", "12 500 ₽/м²"],
-                ].map(([name, glass, u, price], i) => (
+                  ["«Стандарт» ПВХ RIHAU и IVAPER",       "Однокамерный 4-16-4",        "4 900 ₽/м²"],
+                  ["«Комфорт» ПВХ RIHAU и IVAPER",        "Двухкамерный 4-10-4-10-4",   "7 200 ₽/м²"],
+                  ["Энергосберегающее RIHAU и IVAPER",    "Двухкамерный с i-coating",   "9 800 ₽/м²"],
+                  ["Алюминиевое Slim Line (терморазрыв)", "Двухкамерный",               "12 500 ₽/м²"],
+                ].map(([name, glass, price], i) => (
                   <tr key={i} className={i % 2 === 0 ? "bg-brand-cream" : "bg-white"}>
                     <td className="px-4 py-3 font-medium text-brand-blue">{name}</td>
                     <td className="px-4 py-3 text-brand-gray">{glass}</td>
-                    <td className="px-4 py-3 text-brand-gray">{u}</td>
                     <td className="px-4 py-3 font-semibold text-brand-blue">{price}</td>
                   </tr>
                 ))}
