@@ -173,7 +173,7 @@ export default function HomePage() {
         </div>
 
         {/* Badge card - bottom-right, over the bright part of the photo */}
-        <div className="hidden sm:flex absolute z-10 right-12 bottom-16 lg:bottom-20 items-center gap-3 bg-white rounded-2xl shadow-xl px-5 py-3 max-w-[240px]">
+        <div className="hidden sm:flex absolute z-10 right-12 bottom-10 lg:bottom-14 items-center gap-3 bg-white rounded-2xl shadow-xl px-5 py-3 max-w-[240px]">
           <div className="w-11 h-11 shrink-0 rounded-full bg-brand-red/10 flex items-center justify-center">
             <svg className="w-6 h-6 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
