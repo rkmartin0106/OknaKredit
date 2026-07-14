@@ -6,11 +6,36 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProductBySlug, products, categoryLabels } from "@/lib/products";
 import JsonLd, { buildProductSchema, buildBreadcrumbSchema } from "@/components/JsonLd";
-import BalconyDetail from "@/components/BalconyDetail";
+import ProductHeroDetail, { HeroFeature } from "@/components/ProductHeroDetail";
+import { ThermometerIcon, ShieldCheckIcon, RulerIcon, LockIcon, SlidersIcon } from "@/components/icons";
 
 interface Props {
   params: { slug: string };
 }
+
+// Slugs that use the photo hero + modal treatment, with their page-specific copy.
+// (Not part of the core product data model - this is presentation-only content.)
+const heroDetailConfig: Record<string, { title: string; lede: string; features: HeroFeature[]; heroImage?: string }> = {
+  "osteklenie-balkona": {
+    title: "Балконы под ключ",
+    lede: "Остекление и отделка балконов и лоджий. Тёплое и холодное остекление. Расширение пространства и защита от непогоды и шума.",
+    features: [
+      { icon: <ThermometerIcon />, text: "Тёплое и холодное остекление" },
+      { icon: <ShieldCheckIcon />, text: "Защита от шума, ветра и осадков" },
+      { icon: <RulerIcon />, text: "Индивидуальные решения под ваш дом" },
+    ],
+  },
+  "vkhodnaya-gruppa": {
+    title: "Двери под ключ",
+    lede: "Входные и балконные двери из ПВХ-профилей REHAU и IVAPER с усиленным армированием. Многоточечное запирание ROTO FRANK. Стеклопакет в комплектации по вашему выбору.",
+    features: [
+      { icon: <LockIcon />, text: "Многоточечный замок ROTO FRANK" },
+      { icon: <ShieldCheckIcon />, text: "Усиленное стальное армирование" },
+      { icon: <SlidersIcon />, text: "Левое, правое или раздвижное открывание" },
+    ],
+    heroImage: "/images/products/door-hero.jpg",
+  },
+};
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -37,7 +62,8 @@ export default function ProductDetailPage({ params }: Props) {
   const product = getProductBySlug(params.slug);
   if (!product) notFound();
 
-  if (product.slug === "osteklenie-balkona") {
+  const heroDetail = heroDetailConfig[product.slug];
+  if (heroDetail) {
     return (
       <>
         <JsonLd data={buildProductSchema(product)} />
@@ -46,7 +72,7 @@ export default function ProductDetailPage({ params }: Props) {
           { name: "Каталог", url: "/products" },
           { name: product.name, url: `/products/${product.slug}` },
         ])} />
-        <BalconyDetail product={product} />
+        <ProductHeroDetail product={product} {...heroDetail} />
       </>
     );
   }

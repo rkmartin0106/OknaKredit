@@ -1,57 +1,37 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Product } from "@/lib/products";
+import { Product, categoryLabels } from "@/lib/products";
+
+export interface HeroFeature {
+  icon: ReactNode;
+  text: string;
+}
 
 interface Props {
   product: Product;
+  /** Hero H1 - a shorter, punchier headline than product.name (used verbatim in the modal H2). */
+  title: string;
+  lede: string;
+  features: HeroFeature[];
+  /** Background photo for the hero. Defaults to product.image. */
+  heroImage?: string;
 }
 
 const CREAM = "246,242,233";
 
-const features = [
-  {
-    text: "Тёплое и холодное остекление",
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <rect x="10" y="3" width="4" height="11" rx="2" strokeWidth={1.5} />
-        <circle cx="12" cy="17" r="3" strokeWidth={1.5} />
-      </svg>
-    ),
-  },
-  {
-    text: "Защита от шума, ветра и осадков",
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3l7 3v5c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4" />
-      </svg>
-    ),
-  },
-  {
-    text: "Индивидуальные решения под ваш дом",
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <rect x="3" y="8" width="18" height="8" rx="1" strokeWidth={1.5} />
-        <line x1="7" y1="8" x2="7" y2="11.5" strokeWidth={1.5} strokeLinecap="round" />
-        <line x1="11" y1="8" x2="11" y2="11.5" strokeWidth={1.5} strokeLinecap="round" />
-        <line x1="15" y1="8" x2="15" y2="11.5" strokeWidth={1.5} strokeLinecap="round" />
-        <line x1="19" y1="8" x2="19" y2="11.5" strokeWidth={1.5} strokeLinecap="round" />
-      </svg>
-    ),
-  },
-];
-
 const trustChips = ["Гарантия 3 года", "Монтаж под ключ", "Бесплатный замер", "ГОСТ 30971"];
 
-export default function BalconyDetail({ product }: Props) {
+export default function ProductHeroDetail({ product, title, lede, features, heroImage }: Props) {
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLElement | null>(null);
   const closeTimeout = useRef<ReturnType<typeof setTimeout>>();
+  const image = heroImage ?? product.image;
+  const eyebrow = categoryLabels[product.category];
 
   function openModal(e: React.MouseEvent<HTMLElement>) {
     triggerRef.current = e.currentTarget;
@@ -122,7 +102,7 @@ export default function BalconyDetail({ product }: Props) {
         {/* Mobile media block */}
         <div className="relative aspect-[4/3] sm:aspect-video lg:hidden">
           <Image
-            src={product.image}
+            src={image}
             alt={product.name}
             fill
             priority
@@ -140,7 +120,7 @@ export default function BalconyDetail({ product }: Props) {
         {/* Desktop full-bleed media */}
         <div className="hidden lg:block absolute inset-0">
           <Image
-            src={product.image}
+            src={image}
             alt={product.name}
             fill
             priority
@@ -151,7 +131,7 @@ export default function BalconyDetail({ product }: Props) {
         <div
           className="hidden lg:block absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: `linear-gradient(to right, rgba(${CREAM},0.96) 0%, rgba(${CREAM},0.90) 26%, rgba(${CREAM},0.45) 46%, rgba(${CREAM},0.00) 62%)`,
+            backgroundImage: `linear-gradient(to right, rgba(${CREAM},0.99) 0%, rgba(${CREAM},0.93) 26%, rgba(${CREAM},0.45) 46%, rgba(${CREAM},0.00) 62%)`,
           }}
         />
 
@@ -168,14 +148,12 @@ export default function BalconyDetail({ product }: Props) {
               </nav>
 
               <p className="text-brand-red text-sm font-semibold uppercase tracking-wider mb-3">
-                Балконы и лоджии
+                {eyebrow}
               </p>
               <h1 className="text-4xl md:text-5xl font-heading font-bold text-brand-blue leading-[1.05]">
-                Балконы под ключ
+                {title}
               </h1>
-              <p className="mt-5 text-brand-gray text-lg leading-relaxed">
-                Остекление и отделка балконов и лоджий. Тёплое и холодное остекление. Расширение пространства и защита от непогоды и шума.
-              </p>
+              <p className="mt-5 text-brand-gray text-lg leading-relaxed">{lede}</p>
 
               <div className="mt-8 space-y-4">
                 {features.map((f) => (
@@ -221,7 +199,7 @@ export default function BalconyDetail({ product }: Props) {
             ref={panelRef}
             role="dialog"
             aria-modal="true"
-            aria-labelledby="balcony-modal-heading"
+            aria-labelledby="product-modal-heading"
             className={`relative w-full sm:max-w-[42rem] max-h-[92dvh] sm:max-h-[90vh] overflow-y-auto bg-brand-cream rounded-t-2xl sm:rounded-2xl p-6 sm:p-10 shadow-xl transition-all ease-out ${
               visible ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-4 sm:translate-y-0"
             }`}
@@ -239,14 +217,14 @@ export default function BalconyDetail({ product }: Props) {
             </button>
 
             <p className="text-brand-red text-sm font-semibold uppercase tracking-wider mb-2">
-              Балконы и лоджии
+              {eyebrow}
             </p>
             {product.badge && (
               <span className="inline-block bg-brand-red/15 text-brand-red text-xs font-bold px-3 py-1 rounded-full mb-3">
                 {product.badge}
               </span>
             )}
-            <h2 id="balcony-modal-heading" className="text-2xl md:text-3xl font-heading font-bold text-brand-blue leading-snug">
+            <h2 id="product-modal-heading" className="text-2xl md:text-3xl font-heading font-bold text-brand-blue leading-snug">
               {product.name}
             </h2>
             <p className="mt-4 text-brand-gray leading-relaxed">{product.description}</p>
