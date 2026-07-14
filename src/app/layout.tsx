@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
     default: "Пластиковые окна в СПб от производителя | Окна-Кредит",
-    template: "%s | Окна-Кредит — окна в СПб",
+    template: "%s | Окна-Кредит - окна в СПб",
   },
   description:
     "Металлопластиковые окна в Санкт-Петербурге от производителя. Профили REHAU и IVAPER, фурнитура ROTO FRANK. Бесплатный замер в любой день. Монтаж под ключ. Гарантия 3 года. Цены от 4 900 ₽/м².",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     "geo.placename": "Санкт-Петербург",
     "geo.position":  "59.9311;30.3609",
     "ICBM":          "59.9311, 30.3609",
-    // Yandex verification — replace with real token from Яндекс.Вебмастер
+    // Yandex verification - replace with real token from Яндекс.Вебмастер
     "yandex-verification": "YANDEX_VERIFICATION_TOKEN",
   },
 };

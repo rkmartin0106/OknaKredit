@@ -100,7 +100,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* SEO Internal links — районы СПб */}
+        {/* SEO Internal links - районы СПб */}
         <div className="border-t border-white/10 mt-10 pt-8">
           <p className="text-xs text-white/40 mb-3 uppercase tracking-widest font-semibold">Окна по районам СПб</p>
           <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-white/40">

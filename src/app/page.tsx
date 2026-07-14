@@ -5,7 +5,7 @@ import ProductCard from "@/components/ProductCard";
 import { products } from "@/lib/products";
 
 export const metadata: Metadata = {
-  title: "OknaKredit — Металлопластиковые окна от производителя в СПб",
+  title: "OknaKredit - Металлопластиковые окна от производителя в СПб",
   description:
     "Производство и установка металлопластиковых окон, алюминиевых конструкций и остекления балконов. Профили REHAU и IVAPER. Бесплатный замер. Монтаж под ключ. Гарантия 3 года.",
 };
@@ -27,7 +27,7 @@ const benefits = [
       </svg>
     ),
     title: "Прямо от производителя",
-    desc: "Никаких посредников. Поставляем окна напрямую с завода, доставляем и устанавливаем — экономия до 30% по сравнению с рыночными ценами.",
+    desc: "Никаких посредников. Поставляем окна напрямую с завода, доставляем и устанавливаем - экономия до 30% по сравнению с рыночными ценами.",
   },
   {
     icon: (
@@ -36,7 +36,7 @@ const benefits = [
       </svg>
     ),
     title: "Замер бесплатно",
-    desc: "Выезд замерщика — бесплатно в любой день, включая выходные и праздники. Замер и консультация прямо у вас дома.",
+    desc: "Выезд замерщика - бесплатно в любой день, включая выходные и праздники. Замер и консультация прямо у вас дома.",
   },
   {
     icon: (
@@ -77,20 +77,20 @@ const testimonials = [
   {
     name: "Игорь С.",
     location: "Ленинградская область",
-    text: "Заказывали остекление лоджии с утеплением. Сделали за один день — демонтаж, монтаж ПВХ-конструкции и откосы. Качество профиля REHAU заметно даже на ощупь.",
+    text: "Заказывали остекление лоджии с утеплением. Сделали за один день - демонтаж, монтаж ПВХ-конструкции и откосы. Качество профиля REHAU заметно даже на ощупь.",
     stars: 5,
   },
   {
     name: "Марина Т.",
     location: "Санкт-Петербург",
-    text: "Брали окна в кредит, оформили прямо на месте без беготни по банкам. Энергосберегающие стеклопакеты — счета за отопление реально снизились. Рекомендую!",
+    text: "Брали окна в кредит, оформили прямо на месте без беготни по банкам. Энергосберегающие стеклопакеты - счета за отопление реально снизились. Рекомендую!",
     stars: 5,
   },
 ];
 
 const process = [
-  { step: "01", title: "Заявка и замер", desc: "Оставьте заявку — замерщик приедет в удобное время бесплатно и рассчитает стоимость." },
-  { step: "02", title: "Договор и производство", desc: "Подписываем договор, запускаем изготовление. Срок производства — от 5 рабочих дней." },
+  { step: "01", title: "Заявка и замер", desc: "Оставьте заявку - замерщик приедет в удобное время бесплатно и рассчитает стоимость." },
+  { step: "02", title: "Договор и производство", desc: "Подписываем договор, запускаем изготовление. Срок производства - от 5 рабочих дней." },
   { step: "03", title: "Монтаж под ключ", desc: "Демонтаж, монтаж окон, установка откосов, подоконников, отливов. Уборка мусора." },
   { step: "04", title: "Сдача и гарантия", desc: "Принимаете работу, получаете гарантийный талон. Сервис доступен в любое время." },
 ];
@@ -102,11 +102,11 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden min-h-[600px] md:min-h-[680px] lg:min-h-[720px]">
-        {/* Background photo — full-bleed, anchored to the house on the right */}
+        {/* Background photo - full-bleed, anchored to the house on the right */}
         <div className="absolute inset-0">
           <Image
             src="/images/hero-house-wide.jpg"
-            alt="Загородный дом с панорамным остеклением — окна и двери от Окна-Кредит"
+            alt="Загородный дом с панорамным остеклением - окна и двери от Окна-Кредит"
             fill
             priority
             sizes="100vw"
@@ -114,7 +114,7 @@ export default function HomePage() {
           />
         </div>
 
-        {/* Scrim — desktop: protects the text column left-to-right, plus a bottom anchor for the stats row */}
+        {/* Scrim - desktop: protects the text column left-to-right, plus a bottom anchor for the stats row */}
         <div
           className="absolute inset-0 hidden lg:block pointer-events-none"
           style={{
@@ -122,7 +122,7 @@ export default function HomePage() {
               "linear-gradient(to right, rgba(28,15,15,0.94) 0%, rgba(28,15,15,0.85) 32%, rgba(28,15,15,0.35) 58%, rgba(28,15,15,0.10) 80%), linear-gradient(to top, rgba(28,15,15,0.75) 0%, rgba(28,15,15,0) 40%)",
           }}
         />
-        {/* Scrim — mobile: top-to-bottom so the stacked text stays legible, plus the same bottom anchor */}
+        {/* Scrim - mobile: top-to-bottom so the stacked text stays legible, plus the same bottom anchor */}
         <div
           className="absolute inset-0 lg:hidden pointer-events-none"
           style={{
@@ -144,7 +144,7 @@ export default function HomePage() {
               Металлопластиковые окна от производителя
             </h1>
             <p className="mt-6 text-white/70 text-lg md:text-xl leading-relaxed max-w-xl">
-              Профили REHAU и IVAPER, фурнитура ROTO FRANK, стеклопакеты на все случаи жизни. Монтаж под ключ без посредников — вы экономите до 30%.
+              Профили REHAU и IVAPER, фурнитура ROTO FRANK, стеклопакеты на все случаи жизни. Монтаж под ключ без посредников - вы экономите до 30%.
             </p>
             <div className="mt-8 flex flex-wrap lg:flex-nowrap gap-4">
               <Link href="/contact" className="btn-primary text-base py-3.5 px-8 whitespace-nowrap">
@@ -156,7 +156,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Stats — bottom of hero, over the bottom scrim */}
+          {/* Stats - bottom of hero, over the bottom scrim */}
           <div className="border-t border-white/15 pt-6 flex flex-wrap gap-8 text-white/70 text-sm">
             {[
               ["2500+", "выполненных объектов"],
@@ -172,7 +172,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Badge card — bottom-right, over the bright part of the photo */}
+        {/* Badge card - bottom-right, over the bright part of the photo */}
         <div className="hidden sm:flex absolute z-10 right-12 bottom-32 lg:bottom-36 items-center gap-3 bg-white rounded-2xl shadow-xl px-5 py-4 max-w-[240px]">
           <div className="w-11 h-11 shrink-0 rounded-full bg-brand-red/10 flex items-center justify-center">
             <svg className="w-6 h-6 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -191,7 +191,7 @@ export default function HomePage() {
         <div className="text-center mb-12">
           <h2 className="section-heading">Почему выбирают Окна-Кредит?</h2>
           <p className="section-subheading mx-auto">
-            Работаем напрямую с заказчиком — без дилеров, без накруток. Только немецкое качество по честной цене.
+            Работаем напрямую с заказчиком - без дилеров, без накруток. Только немецкое качество по честной цене.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -232,7 +232,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">Как мы работаем</h2>
-            <p className="mt-3 text-white/60 max-w-xl mx-auto">Весь процесс — от звонка до готового результата — без лишних хлопот для вас.</p>
+            <p className="mt-3 text-white/60 max-w-xl mx-auto">Весь процесс - от звонка до готового результата - без лишних хлопот для вас.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {process.map((p) => (
@@ -255,7 +255,7 @@ export default function HomePage() {
             Хотите узнать точную стоимость?
           </h2>
           <p className="mt-3 text-white/70 text-lg max-w-xl mx-auto">
-            Вызовите замерщика бесплатно — приедем в удобное время, измерим проёмы и рассчитаем стоимость.
+            Вызовите замерщика бесплатно - приедем в удобное время, измерим проёмы и рассчитаем стоимость.
           </p>
           <div className="mt-7 flex flex-wrap gap-4 justify-center">
             <Link href="/contact" className="btn-outline border-white text-white hover:bg-white hover:text-brand-red text-base py-3.5 px-10">
@@ -320,7 +320,7 @@ export default function HomePage() {
                 </div>
                 <p className="text-brand-gray text-sm leading-relaxed">&laquo;{t.text}&raquo;</p>
                 <div className="mt-4 font-semibold text-brand-blue text-sm">
-                  {t.name} <span className="font-normal text-brand-gray">— {t.location}</span>
+                  {t.name} <span className="font-normal text-brand-gray">- {t.location}</span>
                 </div>
               </div>
             ))}

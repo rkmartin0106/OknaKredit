@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Контакты",
   description:
-    "Свяжитесь с Окна-Кредит: заказать замер, получить расчёт или задать вопрос. Работаем Пн–Пт 10–18. Замер — в любой день бесплатно.",
+    "Свяжитесь с Окна-Кредит: заказать замер, получить расчёт или задать вопрос. Работаем Пн–Пт 10–18. Замер - в любой день бесплатно.",
 };
 
 const contactDetails = [
@@ -57,7 +57,7 @@ const contactDetails = [
       <div>
         <p className="text-brand-blue font-medium">Пн–Пт: 10:00–18:00</p>
         <p className="text-brand-blue font-medium">Отвечаем Пн-Сб 9:00-20:00</p>
-        <p className="text-brand-gray text-xs mt-1">Замер — в любой день, включая праздники</p>
+        <p className="text-brand-gray text-xs mt-1">Замер - в любой день, включая праздники</p>
       </div>
     ),
     link: null,
@@ -72,7 +72,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-heading font-bold">Связаться с нами</h1>
           <p className="mt-3 text-white/70 text-lg max-w-xl">
-            Оставьте заявку — перезвоним в течение 30 минут. Или звоните напрямую прямо сейчас.
+            Оставьте заявку - перезвоним в течение 30 минут. Или звоните напрямую прямо сейчас.
           </p>
         </div>
       </section>
@@ -106,7 +106,7 @@ export default function ContactPage() {
                 🎁 Скидка 3% при заказе через сайт
               </p>
               <p className="text-brand-gray text-xs mt-1">
-                Упомяните при звонке или укажите в форме — скидка применяется автоматически.
+                Упомяните при звонке или укажите в форме - скидка применяется автоматически.
               </p>
             </div>
 

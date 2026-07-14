@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = getProductBySlug(params.slug);
   if (!product) return { title: "Товар не найден" };
   return {
-    title: `${product.name} — цена в СПб, купить от производителя`,
+    title: `${product.name} - цена в СПб, купить от производителя`,
     description: `${product.shortDesc} Профили REHAU и IVAPER, фурнитура ROTO FRANK. Цена ${product.price}. Бесплатный замер в СПб. Монтаж под ключ. Гарантия 3 года.`,
     keywords: [
       product.name.toLowerCase(),
@@ -117,7 +117,7 @@ export default function ProductDetailPage({ params }: Props) {
               </Link>
             </div>
             <p className="mt-4 text-xs text-brand-gray">
-              Точная цена зависит от размеров проёма, комплектации и объёма заказа. Замер и расчёт — бесплатно в любой день.
+              Точная цена зависит от размеров проёма, комплектации и объёма заказа. Замер и расчёт - бесплатно в любой день.
             </p>
           </div>
         </div>

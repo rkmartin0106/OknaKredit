@@ -4,7 +4,7 @@ import { articles } from "@/lib/articles";
 import JsonLd, { buildBreadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Блог об окнах — советы, гайды и сравнения | Окна-Кредит СПб",
+  title: "Блог об окнах - советы, гайды и сравнения | Окна-Кредит СПб",
   description:
     "Полезные статьи о выборе окон, стеклопакетов, монтаже и уходе. Как выбрать окна для квартиры, что такое энергосберегающий стеклопакет, как избежать ошибок при замене окон.",
   keywords: [

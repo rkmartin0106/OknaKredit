@@ -68,7 +68,7 @@ export default function ProductsPage({
       <div className="mt-16 bg-brand-blue rounded-2xl p-8 md:p-12 text-center text-white">
         <h2 className="text-2xl font-heading font-bold mb-3">Не нашли нужное?</h2>
         <p className="text-white/70 max-w-lg mx-auto mb-6">
-          Мы изготавливаем конструкции любой сложности, нестандартных форм и размеров. Свяжитесь с нами — рассчитаем индивидуально.
+          Мы изготавливаем конструкции любой сложности, нестандартных форм и размеров. Свяжитесь с нами - рассчитаем индивидуально.
         </p>
         <a href="/contact" className="btn-primary">Получить расчёт</a>
       </div>

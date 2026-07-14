@@ -87,7 +87,7 @@ export default function ContactForm() {
       <div>
         <label className="block text-sm font-medium text-brand-blue mb-1">Интересующая продукция</label>
         <select {...register("product")} className={inputClass}>
-          <option value="">— Выберите тип —</option>
+          <option value="">- Выберите тип -</option>
           <option value="pvh">ПВХ-окна (металлопластиковые)</option>
           <option value="alyuminiy">Алюминиевые окна</option>
           <option value="balkony">Остекление балкона / лоджии</option>
