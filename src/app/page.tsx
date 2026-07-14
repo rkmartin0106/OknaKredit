@@ -135,7 +135,7 @@ export default function HomePage() {
         <div className="relative z-10 max-w-7xl mx-auto w-full h-full px-4 sm:px-6 lg:px-8 min-h-[600px] md:min-h-[680px] lg:min-h-[720px] py-16 md:py-20 lg:py-14 flex flex-col justify-between">
           <div className="max-w-[46rem]">
             <span className="inline-block bg-brand-red text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-5">
-              Производитель · Бесплатный замер · Гарантия 3 года
+              От производителя · Бесплатный замер · Рассрочка и кредит
             </span>
             <h1
               className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.05] break-words [hyphens:auto]"
@@ -157,11 +157,11 @@ export default function HomePage() {
           </div>
 
           {/* Stats - bottom of hero, over the bottom scrim */}
-          <div className="border-t border-white/15 pt-6 flex flex-wrap gap-8 text-white/70 text-sm">
+          <div className="flex flex-wrap gap-8 text-white/70 text-sm">
             {[
               ["2500+", "выполненных объектов"],
               ["20+", "лет на рынке"],
-              ["3 года", "гарантия"],
+              ["от 5 дней", "срок изготовления"],
               ["3%", "скидка с сайта"],
             ].map(([val, label]) => (
               <div key={label}>
@@ -173,15 +173,15 @@ export default function HomePage() {
         </div>
 
         {/* Badge card - bottom-right, over the bright part of the photo */}
-        <div className="hidden sm:flex absolute z-10 right-12 bottom-32 lg:bottom-36 items-center gap-3 bg-white rounded-2xl shadow-xl px-5 py-4 max-w-[240px]">
+        <div className="hidden sm:flex absolute z-10 right-12 bottom-16 lg:bottom-20 items-center gap-3 bg-white rounded-2xl shadow-xl px-5 py-3 max-w-[240px]">
           <div className="w-11 h-11 shrink-0 rounded-full bg-brand-red/10 flex items-center justify-center">
             <svg className="w-6 h-6 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
           <div>
-            <p className="text-sm font-semibold text-brand-blue leading-tight">Гарантия 3 года</p>
-            <p className="text-xs text-brand-gray mt-0.5">На изделия и монтаж</p>
+            <p className="text-sm font-semibold text-brand-blue leading-none">Гарантия 3 года</p>
+            <p className="text-xs text-brand-gray mt-0.5 leading-none">На изделия и монтаж</p>
           </div>
         </div>
       </section>
