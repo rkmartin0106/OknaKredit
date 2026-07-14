@@ -55,7 +55,7 @@ export default function GalleryPage() {
 
       <div className="mt-16 bg-brand-blue/5 rounded-2xl p-8 text-center">
         <p className="text-brand-gray text-sm">
-          Больше фотографий - в нашем сообществе ВКонтакте. Хотите обсудить ваш проект?
+          Хотите обсудить ваш проект?
         </p>
         <Link href="/contact" className="btn-primary mt-4 inline-flex text-sm py-2.5 px-6">
           Обсудить проект
