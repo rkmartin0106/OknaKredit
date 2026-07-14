@@ -21,13 +21,23 @@ interface Props {
   heroImage?: string;
   /** Whether heroImage actually exists on disk (checked server-side). Defaults to true. */
   hasHeroImage?: boolean;
+  /** Which side the text column sits on (desktop only - mobile always stacks). Defaults to 'left'. */
+  align?: "left" | "right";
 }
 
 const CREAM = "246,242,233";
 
 const trustChips = ["Гарантия 3 года", "Монтаж под ключ", "Бесплатный замер", "ГОСТ 30971"];
 
-export default function ProductHeroDetail({ product, title, lede, features, heroImage, hasHeroImage = true }: Props) {
+export default function ProductHeroDetail({
+  product,
+  title,
+  lede,
+  features,
+  heroImage,
+  hasHeroImage = true,
+  align = "left",
+}: Props) {
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
@@ -35,6 +45,7 @@ export default function ProductHeroDetail({ product, title, lede, features, hero
   const closeTimeout = useRef<ReturnType<typeof setTimeout>>();
   const image = heroImage ?? product.image;
   const eyebrow = categoryLabels[product.category];
+  const isRight = align === "right";
 
   function openModal(e: React.MouseEvent<HTMLElement>) {
     triggerRef.current = e.currentTarget;
@@ -135,7 +146,7 @@ export default function ProductHeroDetail({ product, title, lede, features, hero
               fill
               priority
               sizes="100vw"
-              className="object-cover object-right"
+              className={`object-cover ${isRight ? "object-left" : "object-right"}`}
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
@@ -146,14 +157,14 @@ export default function ProductHeroDetail({ product, title, lede, features, hero
         <div
           className="hidden lg:block absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: `linear-gradient(to right, rgba(${CREAM},0.99) 0%, rgba(${CREAM},0.93) 26%, rgba(${CREAM},0.45) 46%, rgba(${CREAM},0.00) 62%)`,
+            backgroundImage: `linear-gradient(to ${isRight ? "left" : "right"}, rgba(${CREAM},0.99) 0%, rgba(${CREAM},0.93) 26%, rgba(${CREAM},0.45) 46%, rgba(${CREAM},0.00) 62%)`,
           }}
         />
 
         {/* Content */}
         <div className="relative lg:absolute lg:inset-0 flex lg:items-center">
           <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-10 lg:py-0">
-            <div className="max-w-[34rem]">
+            <div className={`max-w-[34rem] ${isRight ? "lg:ml-auto" : ""}`}>
               <nav className="text-xs text-brand-gray mb-4 flex items-center gap-2 flex-wrap">
                 <Link href="/" className="hover:text-brand-blue transition-colors">Главная</Link>
                 <span>/</span>

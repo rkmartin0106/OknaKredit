@@ -25,7 +25,10 @@ interface Props {
 
 // Slugs that use the photo hero + modal treatment, with their page-specific copy.
 // (Not part of the core product data model - this is presentation-only content.)
-const heroDetailConfig: Record<string, { title: string; lede: string; features: HeroFeature[]; heroImage?: string }> = {
+const heroDetailConfig: Record<
+  string,
+  { title: string; lede: string; features: HeroFeature[]; heroImage?: string; align?: "left" | "right" }
+> = {
   "osteklenie-balkona": {
     title: "Балконы под ключ",
     lede: "Остекление и отделка балконов и лоджий. Тёплое и холодное остекление. Расширение пространства и защита от непогоды и шума.",
@@ -53,6 +56,8 @@ const heroDetailConfig: Record<string, { title: string; lede: string; features: 
       { icon: <ThermometerIcon />, text: "Энергоэффективные стеклопакеты" },
       { icon: <RulerIcon />, text: "Расчёт под ваш проект" },
     ],
+    heroImage: "/images/products/panorama-hero.jpg",
+    align: "right",
   },
   "okna-nestandartnoy-formy": {
     title: "Окна нестандартной формы",
