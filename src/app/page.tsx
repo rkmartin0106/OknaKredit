@@ -82,7 +82,7 @@ const testimonials = [
   },
   {
     name: "Марина Т.",
-    location: "Санкт-Петербург",
+    location: "Ленинградская область",
     text: "Брали окна в кредит, оформили прямо на месте без беготни по банкам. Энергосберегающие стеклопакеты - счета за отопление реально снизились. Рекомендую!",
     stars: 5,
   },
@@ -162,7 +162,7 @@ export default function HomePage() {
               ["2500+", "выполненных объектов"],
               ["20+", "лет на рынке"],
               ["от 5 дней", "срок изготовления"],
-              ["3%", "скидка с сайта"],
+              ["23%", "скидка с сайта"],
             ].map(([val, label]) => (
               <div key={label}>
                 <span className="text-2xl font-bold text-white">{val}</span>
@@ -191,7 +191,7 @@ export default function HomePage() {
         <div className="text-center mb-12">
           <h2 className="section-heading">Почему выбирают Окна-Кредит?</h2>
           <p className="section-subheading mx-auto">
-            Работаем напрямую с заказчиком - без дилеров, без накруток. Только немецкое качество по честной цене.
+            Работаем напрямую с заказчиком - без дилеров, без накруток. Оптимальное соотношение цены и качества.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -55,8 +55,8 @@ const contactDetails = [
     label: "Режим работы",
     content: (
       <div>
-        <p className="text-brand-blue font-medium">Пн–Пт: 10:00–18:00</p>
-        <p className="text-brand-blue font-medium">Отвечаем Пн-Сб 9:00-20:00</p>
+        <p className="text-brand-blue font-medium">Офис: Пн–Пт: 10:00–18:00</p>
+        <p className="text-brand-blue font-medium">Отвечаем на звонки: Пн-Сб 9:00-20:00</p>
         <p className="text-brand-gray text-xs mt-1">Замер - в любой день, включая праздники</p>
       </div>
     ),
@@ -103,7 +103,7 @@ export default function ContactPage() {
             {/* Discount badge */}
             <div className="bg-brand-red/15 border border-brand-red/30 rounded-xl p-4">
               <p className="text-brand-blueDark font-semibold text-sm">
-                🎁 Скидка 3% при заказе через сайт
+                🎁 Скидка 23% при заказе через сайт
               </p>
               <p className="text-brand-gray text-xs mt-1">
                 Упомяните при звонке или укажите в форме - скидка применяется автоматически.

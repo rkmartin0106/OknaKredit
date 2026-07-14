@@ -35,7 +35,7 @@ export default function Header() {
             info@oknakredit.spb.ru
           </a>
           <div className="flex items-center gap-4">
-            <span>Отвечаем Пн-Сб 9:00-20:00</span>
+            <span>Отвечаем на звонки: Пн-Сб 9:00-20:00</span>
             <span className="invisible btn-primary text-sm py-2 px-4" aria-hidden="true">Бесплатный замер</span>
           </div>
         </div>
@@ -119,7 +119,7 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-          <p className="text-white/50 text-xs pt-2">Отвечаем Пн-Сб 9:00-20:00</p>
+          <p className="text-white/50 text-xs pt-2">Отвечаем на звонки: Пн-Сб 9:00-20:00</p>
           <a href="tel:+78129650040" className="text-brand-red font-semibold py-1 text-sm">
             +7 (812) 965-00-40
           </a>
