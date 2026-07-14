@@ -16,7 +16,7 @@ const contactDetails = [
       </svg>
     ),
     label: "Адрес",
-    content: <span>г. Санкт-Петербург,<br />шоссе Революции, д. 88</span>,
+    content: <span>г. Санкт-Петербург,<br />шоссе Революции, д. 88Н</span>,
     link: null,
   },
   {
@@ -125,11 +125,11 @@ export default function ContactPage() {
             {/* Yandex Map */}
             <div className="rounded-2xl overflow-hidden h-48">
               <iframe
-                src="https://yandex.ru/map-widget/v1/?text=Санкт-Петербург%2C%20шоссе%20Революции%2C%2088&z=16"
+                src="https://yandex.ru/map-widget/v1/?text=Санкт-Петербург%2C%20шоссе%20Революции%2C%2088Н&z=16"
                 width="100%"
                 height="100%"
                 frameBorder="0"
-                title="Окна-Кредит на карте — шоссе Революции, д. 88"
+                title="Окна-Кредит на карте — шоссе Революции, д. 88Н"
                 loading="lazy"
               />
             </div>

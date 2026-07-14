@@ -33,7 +33,7 @@ export const localBusinessSchema = {
   paymentAccepted: "Наличные, банковская карта, рассрочка, кредит",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "шоссе Революции, д. 88",
+    streetAddress: "шоссе Революции, д. 88Н",
     addressLocality: "Санкт-Петербург",
     addressRegion: "Санкт-Петербург",
     addressCountry: "RU",
