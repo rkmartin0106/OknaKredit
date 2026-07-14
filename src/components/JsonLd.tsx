@@ -85,7 +85,7 @@ export const organizationSchema = {
     },
     {
       "@type": "ContactPoint",
-      telephone: "+7-921-964-00-40",
+      telephone: "+7-921-965-00-40",
       contactType: "замер",
       areaServed: "RU",
       availableLanguage: "Russian",
