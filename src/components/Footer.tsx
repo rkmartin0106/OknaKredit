@@ -37,6 +37,7 @@ export default function Footer() {
                 ["Остекление балконов", "/products?cat=balkony"],
                 ["Металлопластиковые двери", "/products?cat=dveri"],
                 ["Офисные перегородки", "/products"],
+                ["Цветные окна", "/colors"],
               ].map(([label, href]) => (
                 <li key={label}>
                   <Link href={href} className="hover:text-brand-red transition-colors">{label}</Link>

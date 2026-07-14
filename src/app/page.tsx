@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
+import ColorSwatchGrid from "@/components/ColorSwatchGrid";
 import { products } from "@/lib/products";
+import { popularColors } from "@/lib/colors";
 
 export const metadata: Metadata = {
   title: "OknaKredit - Металлопластиковые окна от производителя в СПб",
@@ -224,6 +226,24 @@ export default function HomePage() {
               <ProductCard key={p.id} product={p} />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Colors */}
+      <section className="bg-brand-cream py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
+            <div>
+              <h2 className="section-heading">Цветные окна</h2>
+              <p className="text-brand-gray mt-2 max-w-2xl">
+                Обширная программа цветов ламинации профиля. Окраска в любой цвет по шкале RAL.
+              </p>
+            </div>
+            <Link href="/colors" className="btn-outline text-sm py-2 px-5">
+              Смотреть все 56 цветов
+            </Link>
+          </div>
+          <ColorSwatchGrid colors={popularColors} />
         </div>
       </section>
 
