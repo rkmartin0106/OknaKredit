@@ -101,101 +101,88 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section
-        className="relative overflow-hidden"
-        style={{ background: "linear-gradient(180deg, #1C0F0F 0%, #2A1414 100%)" }}
-      >
-        {/* Window mullion pattern — desktop, fades out toward the photo */}
+      <section className="relative overflow-hidden min-h-[600px] md:min-h-[680px] lg:min-h-[720px]">
+        {/* Background photo — full-bleed, anchored to the house on the right */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-house-wide.jpg"
+            alt="Загородный дом с панорамным остеклением — окна и двери от Окна-Кредит"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center lg:object-right"
+          />
+        </div>
+
+        {/* Scrim — desktop: protects the text column left-to-right, plus a bottom anchor for the stats row */}
         <div
           className="absolute inset-0 hidden lg:block pointer-events-none"
           style={{
             backgroundImage:
-              "repeating-linear-gradient(to right, rgba(255,255,255,0.06) 0, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 90px), repeating-linear-gradient(to bottom, rgba(255,255,255,0.06) 0, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 120px)",
-            maskImage: "linear-gradient(to right, black 0%, black 45%, transparent 90%)",
-            WebkitMaskImage: "linear-gradient(to right, black 0%, black 45%, transparent 90%)",
+              "linear-gradient(to right, rgba(28,15,15,0.94) 0%, rgba(28,15,15,0.85) 32%, rgba(28,15,15,0.35) 58%, rgba(28,15,15,0.10) 80%), linear-gradient(to top, rgba(28,15,15,0.75) 0%, rgba(28,15,15,0) 40%)",
           }}
         />
-        {/* Window mullion pattern — mobile, faint */}
+        {/* Scrim — mobile: top-to-bottom so the stacked text stays legible, plus the same bottom anchor */}
         <div
           className="absolute inset-0 lg:hidden pointer-events-none"
           style={{
             backgroundImage:
-              "repeating-linear-gradient(to right, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 90px), repeating-linear-gradient(to bottom, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 120px)",
+              "linear-gradient(to bottom, rgba(28,15,15,0.92) 0%, rgba(28,15,15,0.8) 30%, rgba(28,15,15,0.3) 55%, rgba(28,15,15,0.08) 75%), linear-gradient(to top, rgba(28,15,15,0.75) 0%, rgba(28,15,15,0) 40%)",
           }}
         />
 
-        {/* Copy + image row */}
-        <div className="relative flex flex-col lg:block lg:min-h-[640px]">
-          {/* Copy */}
-          <div className="relative order-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-16 md:py-20 lg:py-0 lg:min-h-[640px] lg:flex lg:items-center">
-            <div className="lg:w-[58%] lg:pr-[5%]">
-              <span className="inline-block bg-brand-red text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-5">
-                Производитель · Бесплатный замер · Гарантия 3 года
-              </span>
-              <h1
-                className="text-4xl md:text-5xl font-heading font-bold text-white leading-[1.05] break-words [hyphens:auto] lg:[hyphens:none] lg:[overflow-wrap:normal] lg:[word-break:normal] lg:text-[clamp(2.75rem,4.5vw,4rem)]"
-              >
-                Металлопластиковые окна от производителя
-              </h1>
-              <p className="mt-6 text-white/65 text-lg md:text-xl leading-relaxed max-w-xl">
-                Профили REHAU и IVAPER, фурнитура ROTO FRANK, стеклопакеты на все случаи жизни. Монтаж под ключ без посредников — вы экономите до 30%.
-              </p>
-              <div className="mt-8 flex flex-wrap lg:flex-nowrap gap-4">
-                <Link href="/contact" className="btn-primary text-base py-3.5 px-8 whitespace-nowrap">
-                  Вызвать замерщика бесплатно
-                </Link>
-                <Link href="/products" className="btn-white text-base py-3.5 px-8 whitespace-nowrap">
-                  Смотреть продукцию
-                </Link>
-              </div>
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto w-full h-full px-4 sm:px-6 lg:px-8 min-h-[600px] md:min-h-[680px] lg:min-h-[720px] py-16 md:py-20 lg:py-14 flex flex-col justify-between">
+          <div className="max-w-[46rem]">
+            <span className="inline-block bg-brand-red text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-5">
+              Производитель · Бесплатный замер · Гарантия 3 года
+            </span>
+            <h1
+              className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.05] break-words [hyphens:auto]"
+              style={{ textShadow: "0 2px 24px rgba(0,0,0,0.4)" }}
+            >
+              Металлопластиковые окна от производителя
+            </h1>
+            <p className="mt-6 text-white/70 text-lg md:text-xl leading-relaxed max-w-xl">
+              Профили REHAU и IVAPER, фурнитура ROTO FRANK, стеклопакеты на все случаи жизни. Монтаж под ключ без посредников — вы экономите до 30%.
+            </p>
+            <div className="mt-8 flex flex-wrap lg:flex-nowrap gap-4">
+              <Link href="/contact" className="btn-primary text-base py-3.5 px-8 whitespace-nowrap">
+                Вызвать замерщика бесплатно
+              </Link>
+              <Link href="/products" className="btn-white text-base py-3.5 px-8 whitespace-nowrap">
+                Смотреть продукцию
+              </Link>
             </div>
           </div>
 
-          {/* Image — full-bleed on the right, touching top + right viewport edge, soft left-edge dissolve */}
-          <div className="relative order-2 h-72 sm:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:h-auto lg:w-[42%]">
-            <div
-              className="absolute inset-0 overflow-hidden"
-              style={{
-                maskImage: "linear-gradient(to right, transparent 0%, black 12%)",
-                WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 12%)",
-              }}
-            >
-              <Image
-                src="/images/hero-house.jpg"
-                alt="Загородный дом с панорамным остеклением — окна и двери от Окна-Кредит"
-                fill
-                priority
-                sizes="(min-width: 1024px) 42vw, 100vw"
-                className="object-cover"
-              />
-            </div>
-            <div className="absolute z-10 right-4 sm:right-6 lg:right-6 bottom-6 lg:bottom-10 flex items-center gap-3 bg-white rounded-2xl shadow-xl px-5 py-4 max-w-[240px]">
-              <div className="w-11 h-11 shrink-0 rounded-full bg-brand-red/10 flex items-center justify-center">
-                <svg className="w-6 h-6 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+          {/* Stats — bottom of hero, over the bottom scrim */}
+          <div className="border-t border-white/15 pt-6 flex flex-wrap gap-8 text-white/70 text-sm">
+            {[
+              ["2500+", "выполненных объектов"],
+              ["20+", "лет на рынке"],
+              ["3 года", "гарантия"],
+              ["3%", "скидка с сайта"],
+            ].map(([val, label]) => (
+              <div key={label}>
+                <span className="text-2xl font-bold text-white">{val}</span>
+                <p>{label}</p>
               </div>
-              <div>
-                <p className="text-sm font-semibold text-brand-blue leading-tight">Гарантия 3 года</p>
-                <p className="text-xs text-brand-gray mt-0.5">На изделия и монтаж</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
-        {/* Stats — own block, same left margin as H1, hairline divider, never overlaps the CTAs */}
-        <div className="relative max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 mt-16 border-t border-white/10 py-6 flex flex-wrap gap-8 text-white/65 text-sm">
-          {[
-            ["2500+", "выполненных объектов"],
-            ["20+", "лет на рынке"],
-            ["3 года", "гарантия"],
-            ["3%", "скидка с сайта"],
-          ].map(([val, label]) => (
-            <div key={label}>
-              <span className="text-2xl font-bold text-white">{val}</span>
-              <p>{label}</p>
-            </div>
-          ))}
+        {/* Badge card — bottom-right, over the bright part of the photo */}
+        <div className="hidden sm:flex absolute z-10 right-12 bottom-32 lg:bottom-36 items-center gap-3 bg-white rounded-2xl shadow-xl px-5 py-4 max-w-[240px]">
+          <div className="w-11 h-11 shrink-0 rounded-full bg-brand-red/10 flex items-center justify-center">
+            <svg className="w-6 h-6 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-brand-blue leading-tight">Гарантия 3 года</p>
+            <p className="text-xs text-brand-gray mt-0.5">На изделия и монтаж</p>
+          </div>
         </div>
       </section>
 

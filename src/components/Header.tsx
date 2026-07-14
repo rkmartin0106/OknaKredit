@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { clsx } from "clsx";
 
 const navLinks = [
@@ -17,11 +18,18 @@ const navLinks = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   return (
-    <header className="sticky top-0 z-50 bg-[#2A1414] shadow-md">
+    <header
+      className={clsx(
+        "sticky top-0 z-50 transition-colors",
+        isHome ? "bg-gradient-to-b from-black/55 via-black/25 to-transparent" : "bg-[#2A1414] shadow-md"
+      )}
+    >
       {/* Top bar */}
-      <div className="bg-[#1C0F0F] text-white/60 text-xs py-1.5 hidden md:block">
+      <div className={clsx("text-white/60 text-xs py-1.5 hidden md:block", !isHome && "bg-[#1C0F0F]")}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <a href="mailto:info@oknakredit.spb.ru" className="hover:text-white transition-colors">
             info@oknakredit.spb.ru
