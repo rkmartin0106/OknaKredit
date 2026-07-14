@@ -6,6 +6,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProductBySlug, products, categoryLabels } from "@/lib/products";
 import JsonLd, { buildProductSchema, buildBreadcrumbSchema } from "@/components/JsonLd";
+import BalconyDetail from "@/components/BalconyDetail";
 
 interface Props {
   params: { slug: string };
@@ -35,6 +36,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function ProductDetailPage({ params }: Props) {
   const product = getProductBySlug(params.slug);
   if (!product) notFound();
+
+  if (product.slug === "osteklenie-balkona") {
+    return (
+      <>
+        <JsonLd data={buildProductSchema(product)} />
+        <JsonLd data={buildBreadcrumbSchema([
+          { name: "Главная", url: "/" },
+          { name: "Каталог", url: "/products" },
+          { name: product.name, url: `/products/${product.slug}` },
+        ])} />
+        <BalconyDetail product={product} />
+      </>
+    );
+  }
 
   return (
     <>
