@@ -1,4 +1,7 @@
+import fs from "fs";
+import path from "path";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProductBySlug, products, categoryLabels } from "@/lib/products";
@@ -53,13 +56,24 @@ export default function ProductDetailPage({ params }: Props) {
         </nav>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14">
-          {/* Image placeholder */}
-          <div className="bg-brand-blue/5 rounded-2xl h-96 lg:h-full min-h-80 flex items-center justify-center">
-            <svg className="w-32 h-32 text-brand-blue/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth={1} />
-              <line x1="3" y1="9" x2="21" y2="9" strokeWidth={1} />
-              <line x1="12" y1="9" x2="12" y2="21" strokeWidth={1} />
-            </svg>
+          {/* Image */}
+          <div className="relative bg-brand-blue/5 rounded-2xl h-96 lg:h-full min-h-80 flex items-center justify-center overflow-hidden">
+            {fs.existsSync(path.join(process.cwd(), "public", product.image)) ? (
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                priority
+              />
+            ) : (
+              <svg className="w-32 h-32 text-brand-blue/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth={1} />
+                <line x1="3" y1="9" x2="21" y2="9" strokeWidth={1} />
+                <line x1="12" y1="9" x2="12" y2="21" strokeWidth={1} />
+              </svg>
+            )}
           </div>
 
           {/* Details */}
