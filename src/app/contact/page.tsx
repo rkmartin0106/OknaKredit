@@ -110,14 +110,16 @@ export default function ContactPage() {
               </p>
             </div>
 
-            {/* Map placeholder */}
-            <div className="bg-brand-blue/5 rounded-2xl h-48 flex items-center justify-center">
-              <div className="text-center text-brand-gray">
-                <svg className="w-10 h-10 mx-auto text-brand-blue/20 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                </svg>
-                <p className="text-xs">Здесь будет карта</p>
-              </div>
+            {/* Yandex Map */}
+            <div className="rounded-2xl overflow-hidden h-48">
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?text=Санкт-Петербург%2C%20шоссе%20Революции%2C%2088&z=16"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                title="Окна-Кредит на карте — шоссе Революции, д. 88"
+                loading="lazy"
+              />
             </div>
           </div>
 
