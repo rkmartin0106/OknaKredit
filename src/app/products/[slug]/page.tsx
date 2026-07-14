@@ -7,7 +7,17 @@ import { notFound } from "next/navigation";
 import { getProductBySlug, products, categoryLabels } from "@/lib/products";
 import JsonLd, { buildProductSchema, buildBreadcrumbSchema } from "@/components/JsonLd";
 import ProductHeroDetail, { HeroFeature } from "@/components/ProductHeroDetail";
-import { ThermometerIcon, ShieldCheckIcon, RulerIcon, LockIcon, SlidersIcon } from "@/components/icons";
+import {
+  ThermometerIcon,
+  ShieldCheckIcon,
+  RulerIcon,
+  LockIcon,
+  SlidersIcon,
+  SunIcon,
+  ShapesIcon,
+  PencilRulerIcon,
+  CheckCircleIcon,
+} from "@/components/icons";
 
 interface Props {
   params: { slug: string };
@@ -34,6 +44,24 @@ const heroDetailConfig: Record<string, { title: string; lede: string; features: 
       { icon: <SlidersIcon />, text: "Левое, правое или раздвижное открывание" },
     ],
     heroImage: "/images/products/door-hero.jpg",
+  },
+  "panoramnoe-osteklenie": {
+    title: "Панорамное остекление",
+    lede: "Светопрозрачные конструкции для загородных домов и дач. Большие пролёты, минимум профиля, максимум вида.",
+    features: [
+      { icon: <SunIcon />, text: "Максимум естественного света" },
+      { icon: <ThermometerIcon />, text: "Энергоэффективные стеклопакеты" },
+      { icon: <RulerIcon />, text: "Расчёт под ваш проект" },
+    ],
+  },
+  "okna-nestandartnoy-formy": {
+    title: "Окна нестандартной формы",
+    lede: "Арочные, трапециевидные, треугольные, круглые. Изготавливаем по вашим чертежам - любая геометрия проёма.",
+    features: [
+      { icon: <ShapesIcon />, text: "Любая геометрия проёма" },
+      { icon: <PencilRulerIcon />, text: "Изготовление по чертежам" },
+      { icon: <CheckCircleIcon />, text: "Профили REHAU и IVAPER" },
+    ],
   },
 };
 
@@ -64,6 +92,9 @@ export default function ProductDetailPage({ params }: Props) {
 
   const heroDetail = heroDetailConfig[product.slug];
   if (heroDetail) {
+    const hasHeroImage = fs.existsSync(
+      path.join(process.cwd(), "public", heroDetail.heroImage ?? product.image)
+    );
     return (
       <>
         <JsonLd data={buildProductSchema(product)} />
@@ -72,7 +103,7 @@ export default function ProductDetailPage({ params }: Props) {
           { name: "Каталог", url: "/products" },
           { name: product.name, url: `/products/${product.slug}` },
         ])} />
-        <ProductHeroDetail product={product} {...heroDetail} />
+        <ProductHeroDetail product={product} {...heroDetail} hasHeroImage={hasHeroImage} />
       </>
     );
   }

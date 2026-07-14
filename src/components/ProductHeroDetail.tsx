@@ -4,6 +4,7 @@ import { ReactNode, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Product, categoryLabels } from "@/lib/products";
+import { PlaceholderPhotoIcon } from "@/components/icons";
 
 export interface HeroFeature {
   icon: ReactNode;
@@ -18,13 +19,15 @@ interface Props {
   features: HeroFeature[];
   /** Background photo for the hero. Defaults to product.image. */
   heroImage?: string;
+  /** Whether heroImage actually exists on disk (checked server-side). Defaults to true. */
+  hasHeroImage?: boolean;
 }
 
 const CREAM = "246,242,233";
 
 const trustChips = ["Гарантия 3 года", "Монтаж под ключ", "Бесплатный замер", "ГОСТ 30971"];
 
-export default function ProductHeroDetail({ product, title, lede, features, heroImage }: Props) {
+export default function ProductHeroDetail({ product, title, lede, features, heroImage, hasHeroImage = true }: Props) {
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
@@ -100,15 +103,21 @@ export default function ProductHeroDetail({ product, title, lede, features, hero
       {/* Hero */}
       <section className="relative lg:min-h-[680px] overflow-hidden bg-brand-cream">
         {/* Mobile media block */}
-        <div className="relative aspect-[4/3] sm:aspect-video lg:hidden">
-          <Image
-            src={image}
-            alt={product.name}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
+        <div className="relative aspect-[4/3] sm:aspect-video lg:hidden bg-brand-blue/5">
+          {hasHeroImage ? (
+            <Image
+              src={image}
+              alt={product.name}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <PlaceholderPhotoIcon />
+            </div>
+          )}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
@@ -118,15 +127,21 @@ export default function ProductHeroDetail({ product, title, lede, features, hero
         </div>
 
         {/* Desktop full-bleed media */}
-        <div className="hidden lg:block absolute inset-0">
-          <Image
-            src={image}
-            alt={product.name}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-right"
-          />
+        <div className="hidden lg:block absolute inset-0 bg-brand-blue/5">
+          {hasHeroImage ? (
+            <Image
+              src={image}
+              alt={product.name}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-right"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <PlaceholderPhotoIcon />
+            </div>
+          )}
         </div>
         <div
           className="hidden lg:block absolute inset-0 pointer-events-none"

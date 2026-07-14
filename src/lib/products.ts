@@ -1,4 +1,4 @@
-export type ProductCategory = "pvh" | "alyuminiy" | "balkony" | "dveri";
+export type ProductCategory = "pvh" | "alyuminiy" | "balkony" | "dveri" | "zagorodny" | "nestandart";
 
 export interface Product {
   id: string;
@@ -125,6 +125,44 @@ export const products: Product[] = [
     price: "от 22 000 ₽/шт.",
     image: "/images/products/door-pvh.jpg",
   },
+  {
+    id: "7",
+    slug: "panoramnoe-osteklenie",
+    name: "Панорамное остекление",
+    category: "zagorodny",
+    shortDesc: "Панорамные окна и светопрозрачные конструкции для дач и загородных домов. Максимум света, вид без рам.",
+    description:
+      "Проектируем и устанавливаем панорамные светопрозрачные конструкции для загородных домов, дач и террас. Большие пролёты требуют усиленного армирования и точного расчёта нагрузок - замер и проектирование выполняем на объекте.",
+    features: [
+      "Панорамные конструкции высотой до 3 м",
+      "Энергоэффективный двухкамерный стеклопакет",
+      "Усиленное армирование под большие пролёты",
+      "Раздвижные и распашные створки",
+      "Выезд на объект и расчёт - бесплатно",
+    ],
+    price: "от 30 000 ₽/м²",
+    image: "/images/products/panorama-house.jpg",
+    badge: "Под ключ",
+  },
+  {
+    id: "8",
+    slug: "okna-nestandartnoy-formy",
+    name: "Окна нестандартной формы",
+    category: "nestandart",
+    shortDesc: "Арочные, трапециевидные, треугольные и круглые окна. Изготовление по вашим чертежам и замерам.",
+    description:
+      "Изготавливаем окна любой геометрии: арочные, трапециевидные, треугольные, круглые, многоугольные. Работаем по вашим чертежам или выполняем замер на объекте. Профили REHAU и IVAPER, фурнитура ROTO FRANK.",
+    features: [
+      "Арочные, трапециевидные, треугольные, круглые",
+      "Изготовление по чертежам заказчика",
+      "Профили REHAU и IVAPER",
+      "Любое остекление стеклопакета",
+      "Замер бесплатно - в любой день",
+    ],
+    price: "от 4 999 ₽",
+    image: "/images/products/nestandart.jpg",
+    badge: "Под заказ",
+  },
 ];
 
 export function getProductBySlug(slug: string): Product | undefined {
@@ -140,4 +178,6 @@ export const categoryLabels: Record<ProductCategory, string> = {
   alyuminiy:  "Алюминиевые окна",
   balkony:    "Балконы и лоджии",
   dveri:      "Двери",
+  zagorodny:  "Загородный дом",
+  nestandart: "Нестандартные формы",
 };

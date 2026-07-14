@@ -14,6 +14,8 @@ const categories: { key: ProductCategory | "all"; label: string }[] = [
   { key: "alyuminiy",  label: "Алюминиевые окна" },
   { key: "balkony",    label: "Балконы и лоджии" },
   { key: "dveri",      label: "Двери" },
+  { key: "zagorodny",  label: "Загородный дом" },
+  { key: "nestandart", label: "Нестандартные формы" },
 ];
 
 export default function ProductsPage({
@@ -37,12 +39,12 @@ export default function ProductsPage({
       </div>
 
       {/* Category filter */}
-      <div className="flex flex-wrap gap-2 mb-10">
+      <div className="flex sm:flex-wrap gap-2 mb-10 overflow-x-auto sm:overflow-visible [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
         {categories.map(({ key, label }) => (
           <a
             key={key}
             href={key === "all" ? "/products" : `/products?cat=${key}`}
-            className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
+            className={`shrink-0 whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
               (key === "all" && !activeCat) || key === activeCat
                 ? "bg-brand-blue text-white border-brand-blue"
                 : "border-gray-200 text-brand-gray hover:border-brand-blue hover:text-brand-blue"
