@@ -31,7 +31,7 @@ const contactDetails = [
         <a href="tel:+78129650040" className="text-brand-blue font-medium hover:text-brand-blueLight transition-colors">+7 (812) 965-00-40</a>
         <a href="tel:+78125291104" className="text-brand-blue font-medium hover:text-brand-blueLight transition-colors">+7 (812) 529-11-04</a>
         <a href="tel:+78125291656" className="text-brand-blue font-medium hover:text-brand-blueLight transition-colors">+7 (812) 529-16-56</a>
-        <span className="text-xs text-brand-gray">Замерщик: <a href="tel:+79650040000" className="hover:text-brand-blue transition-colors">+7 (965) 004-00-00</a> (ежедневно)</span>
+        <span className="text-xs text-brand-gray">Замерщик: <a href="tel:+79219640040" className="hover:text-brand-blue transition-colors">+7 (921) 964-00-40</a> (ежедневно)</span>
       </div>
     ),
     link: null,
