@@ -146,7 +146,7 @@ export default function ProductHeroDetail({
               fill
               priority
               sizes="100vw"
-              className={`object-cover ${isRight ? "object-left" : "object-right"}`}
+              className={`object-cover ${isRight ? "object-[20%_center]" : "object-right"}`}
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
@@ -157,14 +157,16 @@ export default function ProductHeroDetail({
         <div
           className="hidden lg:block absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: `linear-gradient(to ${isRight ? "left" : "right"}, rgba(${CREAM},0.99) 0%, rgba(${CREAM},0.93) 26%, rgba(${CREAM},0.45) 46%, rgba(${CREAM},0.00) 62%)`,
+            backgroundImage: isRight
+              ? `linear-gradient(to left, rgba(${CREAM},0.97) 0%, rgba(${CREAM},0.93) 30%, rgba(${CREAM},0.55) 48%, rgba(${CREAM},0.00) 66%)`
+              : `linear-gradient(to right, rgba(${CREAM},0.99) 0%, rgba(${CREAM},0.93) 26%, rgba(${CREAM},0.45) 46%, rgba(${CREAM},0.00) 62%)`,
           }}
         />
 
         {/* Content */}
         <div className="relative lg:absolute lg:inset-0 flex lg:items-center">
           <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-10 lg:py-0">
-            <div className={`max-w-[34rem] ${isRight ? "lg:ml-auto" : ""}`}>
+            <div className={isRight ? "max-w-[34rem] lg:max-w-[26rem] lg:ml-auto" : "max-w-[34rem]"}>
               <nav className="text-xs text-brand-gray mb-4 flex items-center gap-2 flex-wrap">
                 <Link href="/" className="hover:text-brand-blue transition-colors">Главная</Link>
                 <span>/</span>
