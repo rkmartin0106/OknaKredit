@@ -27,7 +27,7 @@ export default function AboutPage() {
       <section className="bg-brand-blue text-white py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-heading font-bold max-w-2xl leading-tight">
-            Производим окна с 2006 года
+            Поставляем окна с 2006 года
           </h1>
           <p className="mt-5 text-white/70 text-lg max-w-2xl leading-relaxed">
             Мы поставляем металлопластиковые окна и двери напрямую от завода. Работаем без посредников, поэтому вы платите только за изделие и работу - без дилерской наценки.
