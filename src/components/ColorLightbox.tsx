@@ -38,8 +38,8 @@ export default function ColorLightbox({ color, onClose }: Props) {
       }}
     >
       <div className="bg-white rounded-2xl overflow-hidden max-w-lg w-full shadow-2xl">
-        <div className="relative aspect-square">
-          <Image src={color.image} alt={color.name} fill sizes="(max-width: 640px) 100vw, 32rem" className="object-cover" />
+        <div className="relative aspect-[2/3] bg-brand-cream">
+          <Image src={color.image} alt={color.name} fill sizes="(max-width: 640px) 100vw, 32rem" className="object-contain" />
           <button
             type="button"
             onClick={onClose}
