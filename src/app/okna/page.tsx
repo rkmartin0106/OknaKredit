@@ -5,7 +5,7 @@ import { districts } from "@/lib/districts";
 import JsonLd, { buildBreadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Пластиковые окна по районам Санкт-Петербурга | Окна-Кредит",
+  title: "Пластиковые окна по районам Санкт-Петербурга",
   description:
     "Выберите свой район СПб - узнайте цены на металлопластиковые окна и закажите бесплатный замер. Работаем во всех районах Петербурга и Ленобласти.",
   keywords: [

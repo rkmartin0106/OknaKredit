@@ -4,7 +4,7 @@ import Link from "next/link";
 import JsonLd, { buildFaqSchema, buildBreadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Частые вопросы об окнах - ответы специалиста | Окна-Кредит СПб",
+  title: "Частые вопросы об окнах - ответы специалиста",
   description:
     "Ответы на самые популярные вопросы: сколько стоят пластиковые окна в СПб, как выбрать стеклопакет, сколько длится монтаж, что такое энергосберегающее окно.",
   keywords: [

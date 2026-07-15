@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { products } from "@/lib/products";
+import { districts } from "@/lib/districts";
 
 const BASE_URL = "https://oknakredit.ru";
 
@@ -11,15 +12,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const districtSlugs = [
-    "kupchino", "nevskiy", "moskovskiy", "vyborgskiy",
-    "primorskiy", "kalininkiy", "krasnogvardeyskiy",
-    "frunzenskiy", "vasileostrovskiy", "petrogradskiy",
-    "admiralteyskiy", "centralnyy", "murino", "vsevolozhsk",
-  ];
-
-  const districtUrls = districtSlugs.map((slug) => ({
-    url: `${BASE_URL}/okna/${slug}`,
+  const districtUrls = districts.map((d) => ({
+    url: `${BASE_URL}/okna/${d.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.8,

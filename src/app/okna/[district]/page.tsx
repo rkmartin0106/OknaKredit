@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDistrictBySlug, districts } from "@/lib/districts";
+import { getTownContent } from "@/lib/townContent";
 import JsonLd, { buildFaqSchema, buildBreadcrumbSchema, localBusinessSchema } from "@/components/JsonLd";
 
 interface Props {
@@ -16,8 +17,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const d = getDistrictBySlug(params.district);
   if (!d) return { title: "Страница не найдена" };
 
-  const title = `Пластиковые окна ${d.nameIn} - цены от производителя | Окна-Кредит`;
-  const description = `Металлопластиковые окна ${d.nameIn} (${d.district}). Профили REHAU и IVAPER, установка под ключ. Бесплатный замер - выезжаем ${d.nameIn}. Цены от 5200 ₽/м². Гарантия 3 года.`;
+  const town = getTownContent(d.slug);
+
+  const title = town
+    ? town.seoTitle
+    : `Пластиковые окна ${d.nameIn} - цены от производителя`;
+  const description = town
+    ? town.seoDescription
+    : `Металлопластиковые окна ${d.nameIn} (${d.district}). Профили REHAU и IVAPER, установка под ключ. Бесплатный замер - выезжаем ${d.nameIn}. Цены от 5200 ₽/м². Гарантия 3 года.`;
 
   return {
     title,
@@ -55,7 +62,8 @@ export default function DistrictPage({ params }: Props) {
   const d = getDistrictBySlug(params.district);
   if (!d) notFound();
 
-  const faqs = districtFaqs(d.name, d.nameIn);
+  const town = getTownContent(d.slug);
+  const faqs = town ? town.faqs : districtFaqs(d.name, d.nameIn);
 
   // Localised schema copy
   const localSchema = {
@@ -89,10 +97,12 @@ export default function DistrictPage({ params }: Props) {
           </nav>
           <p className="text-brand-red text-sm font-semibold uppercase tracking-wider mb-3">{d.district}</p>
           <h1 className="text-4xl md:text-5xl font-heading font-bold leading-tight max-w-2xl">
-            Пластиковые окна {d.nameIn}
+            {town ? town.h1 : <>Пластиковые окна {d.nameIn}</>}
           </h1>
           <p className="mt-5 text-white/70 text-lg max-w-xl">
-            Производим и устанавливаем металлопластиковые окна и двери {d.nameIn}. Бесплатный замер - выезжаем {d.nameIn} в любой день.
+            {town
+              ? town.intro
+              : <>Производим и устанавливаем металлопластиковые окна и двери {d.nameIn}. Бесплатный замер - выезжаем {d.nameIn} в любой день.</>}
           </p>
           {d.metro && (
             <p className="mt-3 text-white/50 text-sm">
@@ -105,6 +115,18 @@ export default function DistrictPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Unique local body (towns only) */}
+      {town && (
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+          <h2 className="section-heading mb-6">{town.bodyHeading}</h2>
+          <div className="space-y-4 text-brand-gray leading-relaxed">
+            {town.body.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Features */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
@@ -180,6 +202,21 @@ export default function DistrictPage({ params }: Props) {
           ))}
         </div>
       </section>
+
+      {/* Internal links (towns only) */}
+      {town && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+          <div className="border-t border-gray-200 pt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+            <Link href="/okna" className="font-semibold text-brand-blue hover:text-brand-red transition-colors">Все районы и города →</Link>
+            <span className="text-brand-gray">Соседние города:</span>
+            {town.siblings.map((s) => (
+              <Link key={s.slug} href={`/okna/${s.slug}`} className="text-brand-blue hover:text-brand-red transition-colors">
+                {s.name}
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="bg-brand-red py-14">
