@@ -83,7 +83,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0">
-            <span className="relative block h-10 md:h-12" style={{ aspectRatio: "1096 / 363" }}>
+            <span className="relative block h-10 md:h-12" style={{ aspectRatio: "1203 / 372" }}>
               <Image
                 src="/images/logo-white.png"
                 alt="Окна-Кредит"
