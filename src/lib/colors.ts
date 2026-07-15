@@ -11,6 +11,7 @@ export const popularColors: PopularColor[] = [
   { slug: "irish-oak", name: "Ирландский дуб", image: "/images/colors/irish-oak.png", code: "MX 9.3211 005" },
   { slug: "mahogany", name: "Махагон", image: "/images/colors/mahogany.png", code: "MX 9.2097 013" },
   { slug: "anthracite-gray", name: "Антрацитово-серый", image: "/images/colors/anthracite-gray.png", code: "RAL 7016" },
+  { slug: "crystal-white", name: "Кристально белый", image: "/images/colors/crystal-white.png", code: "NCS S 0300-N" },
   { slug: "cream", name: "Кремовый", image: "/images/colors/cream.png", code: "≈ RAL 9001" },
   { slug: "black", name: "Блэк", image: "/images/colors/black.png", code: "≈ RAL 9011" },
 ];
@@ -76,7 +77,7 @@ export const colorFamilies: ColorFamily[] = [
   {
     name: "Белые и кремовые",
     colors: [
-      { name: "Кристально белый", code: "NCS S 0300-N" },
+      { name: "Кристально белый", code: "NCS S 0300-N", popularSlug: "crystal-white" },
       { name: "Белый", code: "≈ RAL 9010" },
       { name: "Кремовый", code: "≈ RAL 9001", popularSlug: "cream" },
     ],
