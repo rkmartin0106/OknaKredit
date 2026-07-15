@@ -120,7 +120,7 @@ export default function FaqPage() {
               "linear-gradient(to right, rgba(33,7,6,0.94) 0%, rgba(33,7,6,0.85) 32%, rgba(33,7,6,0.4) 58%, rgba(33,7,6,0.15) 80%), linear-gradient(to top, rgba(33,7,6,0.6) 0%, rgba(33,7,6,0) 40%)",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="text-xs text-white/50 mb-4 flex items-center gap-2">
             <Link href="/" className="hover:text-white transition-colors">Главная</Link>
             <span>/</span>
