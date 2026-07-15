@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -61,8 +62,25 @@ const services = [
 export default function ServicesPage() {
   return (
     <div>
-      <section className="bg-brand-blue text-white py-20 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section data-header-theme="dark" className="relative overflow-hidden text-white min-h-[420px] md:min-h-[480px] lg:min-h-[560px] flex items-center py-16 md:py-20">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/contact-hero.png"
+            alt="Вид на Санкт-Петербург из окна - Окна-Кредит"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </div>
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, rgba(33,7,6,0.94) 0%, rgba(33,7,6,0.85) 32%, rgba(33,7,6,0.4) 58%, rgba(33,7,6,0.15) 80%), linear-gradient(to top, rgba(33,7,6,0.6) 0%, rgba(33,7,6,0) 40%)",
+          }}
+        />
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-heading font-bold max-w-2xl">Услуги</h1>
           <p className="mt-5 text-white/70 text-lg max-w-xl">
             Полный цикл - от замера до сдачи объекта. Один подрядчик, один договор, одна ответственность.
