@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { clsx } from "clsx";
 
@@ -18,8 +19,45 @@ const navLinks = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
   const pathname = usePathname();
   const isHome = pathname === "/";
+
+  useEffect(() => {
+    if (!isHome) return;
+
+    const header = document.querySelector("header");
+    const sections = document.querySelectorAll<HTMLElement>("[data-header-theme]");
+    let ticking = false;
+
+    const updateTheme = () => {
+      ticking = false;
+      const probeY = (header?.clientHeight ?? 0) / 2;
+      for (const section of Array.from(sections)) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= probeY && rect.bottom > probeY) {
+          setTheme(section.getAttribute("data-header-theme") as "light" | "dark");
+          break;
+        }
+      }
+    };
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(updateTheme);
+    };
+
+    updateTheme();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, [isHome]);
+
+  const showBlackLogo = isHome && theme === "light";
 
   return (
     <header
@@ -44,9 +82,28 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl font-heading font-bold text-white">
-              Окна-<span className="text-brand-red">Кредит</span>
+          <Link href="/" className="flex items-center shrink-0">
+            <span className="relative block h-10 md:h-12" style={{ aspectRatio: "1096 / 363" }}>
+              <Image
+                src="/images/logo-white.png"
+                alt="Окна-Кредит"
+                fill
+                priority
+                className={clsx(
+                  "object-contain transition-opacity duration-300",
+                  showBlackLogo ? "opacity-0" : "opacity-100"
+                )}
+              />
+              <Image
+                src="/images/logo-black.png"
+                alt=""
+                aria-hidden
+                fill
+                className={clsx(
+                  "object-contain transition-opacity duration-300",
+                  showBlackLogo ? "opacity-100" : "opacity-0"
+                )}
+              />
             </span>
           </Link>
 

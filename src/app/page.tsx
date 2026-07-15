@@ -103,7 +103,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden min-h-[600px] md:min-h-[680px] lg:min-h-[720px]">
+      <section data-header-theme="dark" className="relative overflow-hidden min-h-[600px] md:min-h-[680px] lg:min-h-[720px]">
         {/* Background photo - full-bleed, anchored to the house on the right */}
         <div className="absolute inset-0">
           <Image
@@ -189,7 +189,7 @@ export default function HomePage() {
       </section>
 
       {/* Benefits */}
-      <section className="container-section">
+      <section data-header-theme="light" className="container-section">
         <div className="text-center mb-12">
           <h2 className="section-heading">Почему выбирают Окна-Кредит?</h2>
           <p className="section-subheading mx-auto">
@@ -210,7 +210,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Products */}
-      <section className="bg-white py-16 md:py-24">
+      <section data-header-theme="light" className="bg-white py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
             <div>
@@ -230,7 +230,7 @@ export default function HomePage() {
       </section>
 
       {/* Colors */}
-      <section className="bg-brand-cream py-16 md:py-24">
+      <section data-header-theme="light" className="bg-brand-cream py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
             <div>
@@ -248,7 +248,7 @@ export default function HomePage() {
       </section>
 
       {/* Process */}
-      <section className="bg-brand-blue py-16 md:py-24">
+      <section data-header-theme="dark" className="bg-brand-blue py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">Как мы работаем</h2>
@@ -269,7 +269,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Banner */}
-      <section className="bg-brand-red">
+      <section data-header-theme="dark" className="bg-brand-red">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 text-center">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">
             Хотите узнать точную стоимость?
@@ -292,7 +292,7 @@ export default function HomePage() {
       </section>
 
       {/* Brands */}
-      <section className="container-section">
+      <section data-header-theme="light" className="container-section">
         <div className="text-center mb-10">
           <h2 className="section-heading">Используемые материалы</h2>
           <p className="section-subheading mx-auto">Только проверенные немецкие компоненты с подтверждёнными сертификатами.</p>
@@ -323,7 +323,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="bg-brand-cream py-16 md:py-24">
+      <section data-header-theme="light" className="bg-brand-cream py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="section-heading">Отзывы клиентов</h2>
