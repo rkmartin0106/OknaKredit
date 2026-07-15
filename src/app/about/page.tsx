@@ -36,16 +36,15 @@ export default function AboutPage() {
       <section className="bg-brand-blue text-white py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-heading font-bold max-w-2xl leading-tight">
-            Производим окна с 2009 года
+            Производим окна с 2006 года
           </h1>
           <p className="mt-5 text-white/70 text-lg max-w-2xl leading-relaxed">
-            Окна-Кредит - прямой производитель металлопластиковых окон и дверей. Работаем без посредников, поэтому вы платите только за изделие и работу - без дилерской наценки.
+            Мы поставляем металлопластиковые окна и двери напрямую от завода. Работаем без посредников, поэтому вы платите только за изделие и работу - без дилерской наценки.
           </p>
-          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl">
+          <div className="mt-8 grid grid-cols-3 gap-6 max-w-2xl">
             {[
               ["2500+", "объектов"],
               ["20+", "лет опыта"],
-              ["60+", "сотрудников"],
               ["3 года", "гарантия"],
             ].map(([val, label]) => (
               <div key={label}>
