@@ -7,14 +7,6 @@ export const metadata: Metadata = {
     "Окна-Кредит - производитель металлопластиковых окон с 2009 года. Профили REHAU и IVAPER, фурнитура ROTO FRANK. Более 2500 выполненных объектов.",
 };
 
-const milestones = [
-  { year: "2009", event: "Основание компании. Запуск собственного производства металлопластиковых окон." },
-  { year: "2012", event: "Расширение линейки: алюминиевые конструкции и остекление балконов." },
-  { year: "2015", event: "500 монтажей в год. Открытие собственного сервисного центра." },
-  { year: "2018", event: "Запуск онлайн-расчёта и онлайн-заявок. Выход в Ленинградскую область." },
-  { year: "2023", event: "Более 2 500 выполненных объектов. Официальный партнёр REHAU, IVAPER и ROTO FRANK." },
-];
-
 const certifications = [
   "Профили REHAU и IVAPER - сертификат соответствия Госстрой",
   "Фурнитура ROTO FRANK - антивзломный класс RC2",
@@ -76,24 +68,6 @@ export default function AboutPage() {
             <svg className="w-24 h-24 text-brand-blue/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
             </svg>
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="section-heading text-center mb-12">История развития</h2>
-          <div className="max-w-2xl mx-auto">
-            <div className="relative border-l-2 border-brand-red/30 pl-8 space-y-8">
-              {milestones.map((m) => (
-                <div key={m.year} className="relative">
-                  <div className="absolute -left-10 top-0.5 w-4 h-4 rounded-full bg-brand-red" />
-                  <p className="text-brand-red font-bold text-sm mb-1">{m.year}</p>
-                  <p className="text-brand-blue font-medium">{m.event}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
