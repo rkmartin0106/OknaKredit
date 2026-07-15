@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -64,10 +65,14 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <div className="bg-brand-blue/5 rounded-2xl h-80 flex items-center justify-center">
-            <svg className="w-24 h-24 text-brand-blue/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-            </svg>
+          <div className="bg-brand-blue/5 rounded-2xl h-80 flex items-center justify-center p-8">
+            <Image
+              src="/images/logo.png"
+              alt="Окна-Кредит"
+              width={1187}
+              height={603}
+              className="max-w-full max-h-full object-contain"
+            />
           </div>
         </div>
       </section>
