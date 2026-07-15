@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { districts } from "@/lib/districts";
 
 export default function Footer() {
   return (
@@ -105,22 +106,8 @@ export default function Footer() {
         <div className="border-t border-white/10 mt-10 pt-8">
           <p className="text-xs text-white/40 mb-3 uppercase tracking-widest font-semibold">Окна по районам Санкт-Петербурга (СПб) и Ленинградской области (Л.О.)</p>
           <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-white/40">
-            {[
-              ["Купчино", "/okna/kupchino"],
-              ["Кировский район", "/okna/kirovskiy"],
-              ["Невский район", "/okna/nevskiy"],
-              ["Московский район", "/okna/moskovskiy"],
-              ["Выборгский район", "/okna/vyborgskiy"],
-              ["Приморский район", "/okna/primorskiy"],
-              ["Калининский район", "/okna/kalininkiy"],
-              ["Красногвардейский", "/okna/krasnogvardeyskiy"],
-              ["Фрунзенский район", "/okna/frunzenskiy"],
-              ["Василеостровский", "/okna/vasileostrovskiy"],
-              ["Петроградский", "/okna/petrogradskiy"],
-              ["Мурино", "/okna/murino"],
-              ["Всеволожск", "/okna/vsevolozhsk"],
-            ].map(([label, href]) => (
-              <Link key={label} href={href} className="hover:text-white transition-colors">{label}</Link>
+            {districts.map((d) => (
+              <Link key={d.slug} href={`/okna/${d.slug}`} className="hover:text-white transition-colors">{d.name}</Link>
             ))}
           </div>
         </div>
