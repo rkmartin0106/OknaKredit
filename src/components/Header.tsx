@@ -19,7 +19,7 @@ const navLinks = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
+  const [theme, setTheme] = useState<"light" | "dark">("light");
   const pathname = usePathname();
   const isHome = pathname === "/";
 
