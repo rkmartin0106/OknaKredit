@@ -102,7 +102,7 @@ export default function FaqPage() {
       ])} />
 
       {/* Hero */}
-      <section data-header-theme="dark" className="relative overflow-hidden text-white py-16 md:py-20">
+      <section data-header-theme="dark" className="relative overflow-hidden text-white min-h-[420px] md:min-h-[480px] lg:min-h-[560px] flex items-center py-16 md:py-20">
         <div className="absolute inset-0">
           <Image
             src="/images/faq-hero.png"
@@ -110,7 +110,7 @@ export default function FaqPage() {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-cover object-[70%_30%]"
           />
         </div>
         <div
