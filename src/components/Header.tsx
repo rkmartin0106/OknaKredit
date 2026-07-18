@@ -20,26 +20,15 @@ const navLinks = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const isHome = pathname === "/";
 
-  const showBlackLogo = isHome;
-
-  // Info (email, tabs, phones) rest in red and "activate" on hover.
-  // Cream bar on home → activate to near-black; dark bar elsewhere → activate to white.
-  const linkIdle = isHome
-    ? "text-brand-red hover:text-brand-blueDark"
-    : "text-brand-red hover:text-white";
-  const linkActive = isHome ? "text-brand-blueDark" : "text-white";
+  // Info (email, tabs, phones) rest in red and "activate" to near-black on hover.
+  const linkIdle = "text-brand-red hover:text-brand-blueDark";
+  const linkActive = "text-brand-blueDark";
 
   return (
-    <header
-      className={clsx(
-        "sticky top-0 z-50 transition-colors",
-        isHome ? "bg-brand-cream shadow-md" : "bg-[#2A1414] shadow-md"
-      )}
-    >
-      {/* Top bar */}
-      <div className={clsx("text-brand-red text-xs py-1.5 hidden md:block", !isHome && "bg-[#1C0F0F]")}>
+    <header className="sticky top-0 z-50 bg-brand-cream shadow-md">
+      {/* Top bar - a shade darker than the main bar */}
+      <div className="text-brand-red text-xs py-1.5 hidden md:block bg-[#E5D6BB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <a href="mailto:info@oknakredit.spb.ru" className={clsx("transition-colors", linkIdle)}>
             info@oknakredit.spb.ru
@@ -57,24 +46,11 @@ export default function Header() {
           <Link href="/" className="flex items-center shrink-0">
             <span className="relative block h-10 md:h-12" style={{ aspectRatio: "1203 / 372" }}>
               <Image
-                src="/images/logo-white.png"
+                src="/images/logo-black.png"
                 alt="Окна-Кредит"
                 fill
                 priority
-                className={clsx(
-                  "object-contain transition-opacity duration-300",
-                  showBlackLogo ? "opacity-0" : "opacity-100"
-                )}
-              />
-              <Image
-                src="/images/logo-black.png"
-                alt=""
-                aria-hidden
-                fill
-                className={clsx(
-                  "object-contain transition-opacity duration-300",
-                  showBlackLogo ? "opacity-100" : "opacity-0"
-                )}
+                className="object-contain"
               />
             </span>
           </Link>
@@ -118,7 +94,7 @@ export default function Header() {
 
           {/* Mobile hamburger */}
           <button
-            className={clsx("md:hidden focus:outline-none", isHome ? "text-brand-red" : "text-white")}
+            className="md:hidden text-brand-red focus:outline-none"
             onClick={() => setOpen((v) => !v)}
             aria-label="Открыть меню"
           >
