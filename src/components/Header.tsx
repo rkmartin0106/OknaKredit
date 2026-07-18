@@ -24,17 +24,24 @@ export default function Header() {
 
   const showBlackLogo = isHome;
 
+  // Info (email, tabs, phones) rest in red and "activate" on hover.
+  // Cream bar on home → activate to near-black; dark bar elsewhere → activate to white.
+  const linkIdle = isHome
+    ? "text-brand-red hover:text-brand-blueDark"
+    : "text-brand-red hover:text-white";
+  const linkActive = isHome ? "text-brand-blueDark" : "text-white";
+
   return (
     <header
       className={clsx(
         "sticky top-0 z-50 transition-colors",
-        isHome ? "bg-gradient-to-b from-black/25 via-black/10 to-transparent" : "bg-[#2A1414] shadow-md"
+        isHome ? "bg-brand-cream shadow-md" : "bg-[#2A1414] shadow-md"
       )}
     >
       {/* Top bar */}
       <div className={clsx("text-brand-red text-xs py-1.5 hidden md:block", !isHome && "bg-[#1C0F0F]")}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-          <a href="mailto:info@oknakredit.spb.ru" className="hover:text-white transition-colors">
+          <a href="mailto:info@oknakredit.spb.ru" className={clsx("transition-colors", linkIdle)}>
             info@oknakredit.spb.ru
           </a>
           <div className="flex items-center gap-4">
@@ -80,9 +87,7 @@ export default function Header() {
                 href={link.href}
                 className={clsx(
                   "font-medium text-sm transition-colors",
-                  pathname === link.href
-                    ? "text-white"
-                    : "text-brand-red hover:text-white"
+                  pathname === link.href ? linkActive : linkIdle
                 )}
               >
                 {link.label}
@@ -95,13 +100,13 @@ export default function Header() {
             <div className="flex flex-col leading-tight tabular-nums">
               <a
                 href="tel:+78129650040"
-                className="text-brand-red font-semibold text-sm hover:text-white transition-colors"
+                className={clsx("font-semibold text-sm transition-colors", linkIdle)}
               >
                 +7 (812) 965-00-40
               </a>
               <a
                 href="tel:+78125291104"
-                className="text-brand-red font-semibold text-sm hover:text-white transition-colors"
+                className={clsx("font-semibold text-sm transition-colors", linkIdle)}
               >
                 +7 (812) 529-11-04
               </a>
@@ -113,7 +118,7 @@ export default function Header() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden text-white focus:outline-none"
+            className={clsx("md:hidden focus:outline-none", isHome ? "text-brand-red" : "text-white")}
             onClick={() => setOpen((v) => !v)}
             aria-label="Открыть меню"
           >
