@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { clsx } from "clsx";
 
@@ -19,55 +19,20 @@ const navLinks = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const [theme, setTheme] = useState<"light" | "dark">("light");
   const pathname = usePathname();
   const isHome = pathname === "/";
 
-  useEffect(() => {
-    if (!isHome) return;
-
-    const header = document.querySelector("header");
-    const sections = document.querySelectorAll<HTMLElement>("[data-header-theme]");
-    let ticking = false;
-
-    const updateTheme = () => {
-      ticking = false;
-      const probeY = (header?.clientHeight ?? 0) / 2;
-      for (const section of Array.from(sections)) {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= probeY && rect.bottom > probeY) {
-          setTheme(section.getAttribute("data-header-theme") as "light" | "dark");
-          break;
-        }
-      }
-    };
-
-    const onScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(updateTheme);
-    };
-
-    updateTheme();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-    };
-  }, [isHome]);
-
-  const showBlackLogo = isHome && theme === "light";
+  const showBlackLogo = isHome;
 
   return (
     <header
       className={clsx(
         "sticky top-0 z-50 transition-colors",
-        isHome ? "bg-gradient-to-b from-black/55 via-black/25 to-transparent" : "bg-[#2A1414] shadow-md"
+        isHome ? "bg-gradient-to-b from-black/25 via-black/10 to-transparent" : "bg-[#2A1414] shadow-md"
       )}
     >
       {/* Top bar */}
-      <div className={clsx("text-white/60 text-xs py-1.5 hidden md:block", !isHome && "bg-[#1C0F0F]")}>
+      <div className={clsx("text-brand-red text-xs py-1.5 hidden md:block", !isHome && "bg-[#1C0F0F]")}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <a href="mailto:info@oknakredit.spb.ru" className="hover:text-white transition-colors">
             info@oknakredit.spb.ru
@@ -113,7 +78,12 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-white/80 hover:text-brand-red font-medium text-sm transition-colors"
+                className={clsx(
+                  "font-medium text-sm transition-colors",
+                  pathname === link.href
+                    ? "text-white"
+                    : "text-brand-red hover:text-white"
+                )}
               >
                 {link.label}
               </Link>
@@ -125,13 +95,13 @@ export default function Header() {
             <div className="flex flex-col leading-tight tabular-nums">
               <a
                 href="tel:+78129650040"
-                className="text-white font-semibold text-sm hover:text-brand-red transition-colors"
+                className="text-brand-red font-semibold text-sm hover:text-white transition-colors"
               >
                 +7 (812) 965-00-40
               </a>
               <a
                 href="tel:+78125291104"
-                className="text-white font-semibold text-sm hover:text-brand-red transition-colors"
+                className="text-brand-red font-semibold text-sm hover:text-white transition-colors"
               >
                 +7 (812) 529-11-04
               </a>
