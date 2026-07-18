@@ -243,7 +243,7 @@ export default function HomePage() {
               Смотреть все 56 цветов
             </Link>
           </div>
-          <ColorSwatchGrid colors={popularColors} />
+          <ColorSwatchGrid colors={popularColors.slice(0, 4)} />
         </div>
       </section>
 
